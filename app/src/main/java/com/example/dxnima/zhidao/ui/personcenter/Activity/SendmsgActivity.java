@@ -3,7 +3,7 @@ package com.example.dxnima.zhidao.ui.personcenter.Activity;
 import android.os.Bundle;
 
 import com.example.dxnima.zhidao.R;
-import com.example.dxnima.zhidao.biz.personcenter.IMsgView;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
 import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
 

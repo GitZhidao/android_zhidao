@@ -5,6 +5,7 @@ import android.util.Log;
 import com.example.dxnima.zhidao.ZDApplication;
 import com.example.dxnima.zhidao.bean.table.User;
 import com.example.dxnima.zhidao.biz.BasePresenter;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IUserLoginView;
 import com.example.dxnima.zhidao.bridge.BridgeFactory;
 import com.example.dxnima.zhidao.bridge.Bridges;
 import com.example.dxnima.zhidao.bridge.cache.sharePref.EBSharedPrefManager;
@@ -156,5 +157,4 @@ public class UserPresenter extends BasePresenter<IUserLoginView> {
             }
         }
     }
-
 }

@@ -5,7 +5,7 @@ import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
-import com.example.dxnima.zhidao.biz.personcenter.IMsgView;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
 import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
 

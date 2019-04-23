@@ -500,27 +500,14 @@ public class OkHttpUtil {
                         userList.add(user);
                         resData=userList;
                         code = ((BaseResp) res).getstatus();
+                        String msg=((BaseResp) res).getMsg();
+                        decideCode(code,res,resData,msg);
                     }
                     else {
                         resData = ((ListBaseResp<T>) res).getData();//json数据中data数据对象
                         code = ((ListBaseResp) res).getstatus();
-                    }
-                    if (res != null) {
-                        switch (code) {
-                            case 0://success
-                                postSucessMsg(resData);//返回json中 data数据对象
-                                break;
-                            case 1://error
-                            case 2://需要注册
-                            case 10://需要登陆
-                            default:
-                                notifyMsg = ((BaseResp) res).getMsg();
-                                postErrorMsg();
-                                break;
-                        }
-                    } else {
-                        notifyMsg = SERVER_ERROR;
-                        postErrorMsg();
+                        String msg=((ListBaseResp)res).getMsg();
+                        decideCode(code,res,resData,msg);
                     }
                 }
                 catch (IOException e){
@@ -529,6 +516,29 @@ public class OkHttpUtil {
                 }
             } else {
                 notifyMsg = NETWORK_ERROR;
+                postErrorMsg();
+            }
+        }
+
+        /**
+         * 判断code
+         * */
+        private  void  decideCode(int code,T res,List<T> resData,String msg){
+            if (res != null) {
+                switch (code) {
+                    case 0://success
+                        postSucessMsg(resData);//返回json中 data数据对象
+                        break;
+                    case 1://error
+                    case 2://需要注册
+                    case 10://需要登陆
+                    default:
+                        notifyMsg = msg;
+                        postErrorMsg();
+                        break;
+                }
+            } else {
+                notifyMsg = SERVER_ERROR;
                 postErrorMsg();
             }
         }

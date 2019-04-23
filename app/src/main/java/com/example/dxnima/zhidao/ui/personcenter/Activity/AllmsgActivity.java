@@ -9,7 +9,9 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
-import com.example.dxnima.zhidao.biz.personcenter.IMsgView;
+import com.example.dxnima.zhidao.bean.table.Msg;
+import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
 import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
 import com.example.dxnima.zhidao.view.MyAdapter;
@@ -29,7 +31,9 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
 
     private MyAdapter mAdapter = null;
     private List<MyListViewData> mData = null;
+    private List<Msg> msgList=null;
     private MsgPresenter mMsgPresenter;
+    private GetSubjectPresenter getSubjectPresenter;
     private Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
         setHeader();
         presenter = mMsgPresenter = new MsgPresenter();
         mMsgPresenter.attachView(this);
+        getSubjectPresenter=new GetSubjectPresenter();
     }
 
     @Override
@@ -48,7 +53,10 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
         searchMsg=(SearchView) findViewById(R.id.searchMsg);
         listMsg=(ListView) findViewById(R.id.listMsg);
         allMsg_text=(TextView) findViewById(R.id.allmsg_text);
-        mAdapter.add(new MyListViewData(R.drawable.xingxing,"英语考试","结束时间：","10：00"));
+        Bundle bundle=new Bundle();
+        bundle=getIntent().getExtras();
+        mMsgPresenter.allMsgByCode(bundle.getString("code"));
+        initData();
         listMsg.setAdapter(mAdapter);
         allMsg_text.setText("暂无通知~");
         listMsg.setEmptyView(allMsg_text);
@@ -85,7 +93,7 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
                     Intent intent = new Intent(AllmsgActivity.this,SeemsgActivity.class);//跳转到看消息界面
                     bundle.putString("title", data.getTitle());//bundle传值，SeemsgActivity中使用
                     bundle.putString("endtime", data.getEndtime());
-                    bundle.putString("content","B210");
+                    bundle.putString("content",msgList.get(position).getContent());
                     intent.putExtras(bundle);
                     startActivity(intent);
                 }
@@ -111,5 +119,16 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
     @Override
     public void hideLoading() {
 
+    }
+
+    public void indata(){
+        Msg msg;
+        msgList=mMsgPresenter.msgList;
+        if (msgList==null) return;
+        else
+            for (int i = 0; i < msgList.size(); i++) {
+                msg = msgList.get(i);
+                mAdapter.add(new MyListViewData(R.drawable.xingxing, msg.getTitle(),"结束时间：",msg.getEndtime()));
+            }
     }
 }

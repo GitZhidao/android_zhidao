@@ -3,7 +3,7 @@ package com.example.dxnima.zhidao.ui.personcenter.Activity;
 import android.os.Bundle;
 
 import com.example.dxnima.zhidao.R;
-import com.example.dxnima.zhidao.biz.personcenter.IUserLoginView;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IUserLoginView;
 import com.example.dxnima.zhidao.biz.personcenter.UserPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
 

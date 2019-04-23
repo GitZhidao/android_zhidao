@@ -14,8 +14,8 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
-import com.example.dxnima.zhidao.bean.table.Msg;
-import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
+import com.example.dxnima.zhidao.bean.table.Subject;
+import com.example.dxnima.zhidao.biz.personcenter.SubjectPresenter;
 import com.example.dxnima.zhidao.ui.personcenter.Activity.AllmsgActivity;
 import com.example.dxnima.zhidao.view.MyAdapter;
 import com.example.dxnima.zhidao.view.MyListViewData;
@@ -24,7 +24,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 消息通知页面
+ * 主题页面
  * 对应xml:activity_main
  * Created by DXnima on 2019/4/13.
  */
@@ -35,9 +35,7 @@ public class MainFragment extends Fragment {
     private TextView txt_empty;
     private MyAdapter mAdapter = null;
     private List<MyListViewData> mData = null;
-    private List<Msg> msgList=null;
-    private Msg msg;
-    private MsgPresenter msgPresenter;
+    private List<Subject> subjectList=null;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +66,9 @@ public class MainFragment extends Fragment {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(getActivity().getApplicationContext(), AllmsgActivity.class);//跳转到消息界面
+                    Bundle bundle=new Bundle();
+                    bundle.putString("code",subjectList.get(position).getCode());
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
@@ -78,7 +79,6 @@ public class MainFragment extends Fragment {
     private void bindViews() {
         listMsg.setAdapter(mAdapter);
         txt_empty.setText("暂无主题~");
-
         listMsg.setEmptyView(txt_empty);
     }
 
@@ -96,13 +96,14 @@ public class MainFragment extends Fragment {
 
     //添加list数据
     public void initData() {
-//        msgList=msgPresenter.msgList;
-//        if (msgList==null) return;
-//        else
-//        for (int i = 0; i < msgList.size(); i++) {
-//            msg = msgList.get(i);
-//            mAdapter.add(new MyListViewData(R.drawable.xingxing, msg.getTitle(), msg.getEndtime()));
-//        }
-        mAdapter.add(new MyListViewData(R.drawable.xingxing,"考试","类别：","学习"));
+        SubjectPresenter subjectPresenter=new SubjectPresenter();
+        Subject subject;
+        subjectList=subjectPresenter.subjectList;
+        if (subjectList==null) return;
+        else
+        for (int i = 0; i < subjectList.size(); i++) {
+            subject = subjectList.get(i);
+            mAdapter.add(new MyListViewData(R.drawable.xingxing, subject.getSubtitle(),"编号：",subject.getCode()));
+        }
     }
 }

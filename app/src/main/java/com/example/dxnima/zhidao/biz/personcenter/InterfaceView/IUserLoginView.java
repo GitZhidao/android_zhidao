@@ -1,4 +1,4 @@
-package com.example.dxnima.zhidao.biz.personcenter;
+package com.example.dxnima.zhidao.biz.personcenter.InterfaceView;
 
 import com.example.dxnima.zhidao.biz.IMvpView;
 

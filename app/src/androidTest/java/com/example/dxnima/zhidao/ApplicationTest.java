@@ -33,7 +33,7 @@ public class ApplicationTest<T> extends ApplicationTestCase<Application> {
         super(Application.class);}
         public void testMain(){
             SecurityManager securityManager = new SecurityManager();
-            Log.i(TAG, "testMain: "+securityManager.get32MD5Str("123"));
+            Log.i(TAG, "testMain: " + securityManager.get32MD5Str("123"));
         }
 
     /**

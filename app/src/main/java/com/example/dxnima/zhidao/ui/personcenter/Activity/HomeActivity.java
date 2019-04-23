@@ -10,8 +10,10 @@ import android.widget.RadioButton;
 
 import com.example.dxnima.zhidao.R;
 import com.example.dxnima.zhidao.bean.table.Msg;
-import com.example.dxnima.zhidao.biz.personcenter.IMsgView;
+import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
 import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
+import com.example.dxnima.zhidao.biz.personcenter.SubjectPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
 import com.example.dxnima.zhidao.ui.personcenter.Fragment.MainFragment;
 import com.example.dxnima.zhidao.ui.personcenter.Fragment.MypageFragment;
@@ -57,8 +59,8 @@ public class HomeActivity extends BaseActivity implements IMsgView{
         setContentView(R.layout.activity_home);
         super.onCreate(savedInstanceState);
         presenter = mMsgPresenter = new MsgPresenter();
-        mMsgPresenter.allSendMsg();
         mMsgPresenter.attachView(this);
+        testRequst();//进入主界面去请求主题 msg 等数据备用
         fragmentManager = getFragmentManager();
         setChioceItem(0); // 初始化页面加载时显示第一个选项卡
     }
@@ -91,7 +93,6 @@ public class HomeActivity extends BaseActivity implements IMsgView{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.home_msg:
-                mMsgPresenter.allSendMsg();
                 setChioceItem(0);
                 break;
             case R.id.home_sendmsg:
@@ -170,4 +171,11 @@ public class HomeActivity extends BaseActivity implements IMsgView{
         }
     }
 
+    //进入主界面请求得到以下数据
+    public void testRequst(){
+        SubjectPresenter subjectPresenter=new SubjectPresenter();
+        GetSubjectPresenter getSubjectPresenter=new GetSubjectPresenter();
+        subjectPresenter.allSendSubject();//所有发布的主题
+        getSubjectPresenter.allFocusSubject();//所有关注的主题
+    }
 }

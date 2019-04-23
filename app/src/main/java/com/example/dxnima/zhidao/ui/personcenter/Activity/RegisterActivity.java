@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
-import com.example.dxnima.zhidao.biz.personcenter.IUserLoginView;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IUserLoginView;
 import com.example.dxnima.zhidao.biz.personcenter.UserPresenter;
 import com.example.dxnima.zhidao.constant.Event;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
