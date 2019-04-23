@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.dxnima.zhidao">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".ZDApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="吱道"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--.ui.personcenter.Activity.WelcomeActivity-->
+        <activity android:name=".ui.personcenter.Activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.LoginActivity">
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.HomeActivity">
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.RegisterActivity">
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.UpdatepsdActivity">
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.SendmsgActivity">
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.SettingActivity">
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.SeemsgActivity">
+        </activity>
+        <activity android:name=".ui.personcenter.Activity.AllmsgActivity">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@color/lunch">
+
+    <FrameLayout
+        android:layout_width="413dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/lunch">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:background="@drawable/dong"
+            android:layout_gravity="center"
+            android:layout_width="255dp"
+            android:layout_height="255dp"/>
+
+
+
+    </FrameLayout>
+</LinearLayout>

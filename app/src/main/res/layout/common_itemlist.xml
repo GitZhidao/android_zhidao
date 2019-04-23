@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:orientation="horizontal"
+              android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="66dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="英语考试"
+            android:id="@+id/list_msgtitle"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结束时间："
+            android:id="@+id/list_texttime"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/list_msgendtime"
+            android:layout_toStartOf="@+id/list_msgendtime"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/list_msgimage"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/list_msgtitle"
+            android:layout_toEndOf="@+id/list_msgtitle"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/item_jiantou"
+            android:layout_above="@+id/list_msgendtime"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10月01日 00：00"
+            android:id="@+id/list_msgendtime"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/imageView4"
+            android:layout_toStartOf="@+id/imageView4"/>
+    </RelativeLayout>
+</LinearLayout>
