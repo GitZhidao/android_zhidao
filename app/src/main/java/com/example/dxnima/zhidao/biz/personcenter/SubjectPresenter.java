@@ -22,21 +22,23 @@ public class SubjectPresenter extends BasePresenter<ISubjectView>{
      * 获取所有发布的主题
      * */
     public void allSendSubject(){
+        mvpView.showLoading();
         OkHttpManager httpManager = BridgeFactory.getBridge(Bridges.HTTP);
-        httpManager.requestAsyncGet(URLUtil.SUBJECT_ALL, new ITRequestResult<Subject>() {
+        httpManager.requestAsyncGetByTag(URLUtil.SUBJECT_ALL,getName(),new ITRequestResult<Subject>() {
             @Override
             public void onSuccessful(List<Subject> entity) {
                 subjectList=entity;
+                mvpView.onSuccess();
             }
 
             @Override
             public void onFailure(String errorMsg) {
-
+                mvpView.onError(errorMsg,"刷新失败");
             }
 
             @Override
             public void onCompleted() {
-
+                mvpView.hideLoading();
             }
         }, Subject.class);
     }

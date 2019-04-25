@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
 import com.example.dxnima.zhidao.bean.table.Msg;
-import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
 import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
 import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
@@ -33,7 +32,6 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
     private List<MyListViewData> mData = null;
     private List<Msg> msgList=null;
     private MsgPresenter mMsgPresenter;
-    private GetSubjectPresenter getSubjectPresenter;
     private Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,9 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
         setHeader();
         presenter = mMsgPresenter = new MsgPresenter();
         mMsgPresenter.attachView(this);
-        getSubjectPresenter=new GetSubjectPresenter();
+        Bundle bundle;
+        bundle=getIntent().getExtras();
+        mMsgPresenter.allMsgByCode(bundle.getString("code"));
     }
 
     @Override
@@ -53,10 +53,6 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
         searchMsg=(SearchView) findViewById(R.id.searchMsg);
         listMsg=(ListView) findViewById(R.id.listMsg);
         allMsg_text=(TextView) findViewById(R.id.allmsg_text);
-        Bundle bundle=new Bundle();
-        bundle=getIntent().getExtras();
-        mMsgPresenter.allMsgByCode(bundle.getString("code"));
-        initData();
         listMsg.setAdapter(mAdapter);
         allMsg_text.setText("暂无通知~");
         listMsg.setEmptyView(allMsg_text);
@@ -84,6 +80,42 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
 
     @Override
     public void initData() {
+    }
+
+    @Override
+    public void onError(String errorMsg, String code) {
+
+    }
+
+    @Override
+    public void onSuccess() {
+        addListViewdata();
+        itemOclik();
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    public void addListViewdata(){
+        Msg msg;
+        msgList=mMsgPresenter.msgList;
+        if (msgList==null) return;
+        else
+            for (int i = 0; i < msgList.size(); i++) {
+                msg = msgList.get(i);
+                mAdapter.add(new MyListViewData(R.drawable.xingxing, msg.getTitle(),"结束时间：",msg.getEndtime()));
+            }
+    }
+
+    //对应item的点击事件
+    public void itemOclik(){
         for (int position = 0; position <mData.size(); position++) {
             //item的点击事件，里面可以设置跳转并传值
             listMsg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -99,36 +131,5 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
                 }
             });
         }
-    }
-
-    @Override
-    public void onError(String errorMsg, String code) {
-
-    }
-
-    @Override
-    public void onSuccess() {
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    public void indata(){
-        Msg msg;
-        msgList=mMsgPresenter.msgList;
-        if (msgList==null) return;
-        else
-            for (int i = 0; i < msgList.size(); i++) {
-                msg = msgList.get(i);
-                mAdapter.add(new MyListViewData(R.drawable.xingxing, msg.getTitle(),"结束时间：",msg.getEndtime()));
-            }
     }
 }

@@ -8,13 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
 import com.example.dxnima.zhidao.bean.table.Subject;
+import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.ISubjectView;
 import com.example.dxnima.zhidao.biz.personcenter.SubjectPresenter;
 import com.example.dxnima.zhidao.ui.personcenter.Activity.AllmsgActivity;
 import com.example.dxnima.zhidao.view.MyAdapter;
@@ -22,13 +23,12 @@ import com.example.dxnima.zhidao.view.MyListViewData;
 
 import java.util.LinkedList;
 import java.util.List;
-
 /**
  * 主题页面
  * 对应xml:activity_main
  * Created by DXnima on 2019/4/13.
  */
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements ISubjectView{
 
     private SearchView searchView;
     private ListView listMsg;
@@ -36,11 +36,15 @@ public class MainFragment extends Fragment {
     private MyAdapter mAdapter = null;
     private List<MyListViewData> mData = null;
     private List<Subject> subjectList=null;
+    private SubjectPresenter subjectPresenter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //listview初始化
+        subjectPresenter=new SubjectPresenter();
+        subjectPresenter.attachView(this);
+        subjectPresenter.allSendSubject();
         mData = new LinkedList<MyListViewData>();
         mAdapter = new MyAdapter((LinkedList<MyListViewData>) mData,getActivity());
     }
@@ -52,7 +56,6 @@ public class MainFragment extends Fragment {
         searchView=(SearchView) view.findViewById(R.id.searchView);
         listMsg=(ListView) view.findViewById(R.id.listSubject);
         txt_empty=(TextView) view.findViewById(R.id.text_empty);
-        initData();
         bindViews();
         return view;
     }
@@ -60,6 +63,32 @@ public class MainFragment extends Fragment {
     //开始
     @Override
     public void onStart() {
+        super.onStart();
+    }
+
+
+    private void bindViews() {
+        listMsg.setAdapter(mAdapter);
+        txt_empty.setText("暂无主题~");
+        listMsg.setEmptyView(txt_empty);
+    }
+
+    //进入主界面请求得到以下数据
+    public void allRequst(){
+        SubjectPresenter subjectPresenter=new SubjectPresenter();
+        GetSubjectPresenter getSubjectPresenter=new GetSubjectPresenter();
+        subjectPresenter.allSendSubject();//所有发布的主题
+        getSubjectPresenter.allFocusSubject();//所有关注的主题
+    }
+
+    @Override
+    public void onError(String errorMsg, String code) {
+
+    }
+
+    @Override
+    public void onSuccess() {
+        initData();
         for (int position = 0; position <mData.size(); position++) {
             //item的点击事件，里面可以设置跳转并传值
             listMsg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -73,37 +102,27 @@ public class MainFragment extends Fragment {
                 }
             });
         }
-        super.onStart();
     }
 
-    private void bindViews() {
-        listMsg.setAdapter(mAdapter);
-        txt_empty.setText("暂无主题~");
-        listMsg.setEmptyView(txt_empty);
+    @Override
+    public void showLoading() {
+
     }
 
-    //修改某一行的list数据
-    private void updateListItem(int postion,MyListViewData mData){
-        int visiblePosition = listMsg.getFirstVisiblePosition();
-        View v = listMsg.getChildAt(postion - visiblePosition);
-        ImageView msgimage = (ImageView) v.findViewById(R.id.list_msgimage);
-        TextView msgtitel = (TextView) v.findViewById(R.id.list_msgtitle);
-        TextView msgendtime=(TextView) v.findViewById(R.id.list_msgendtime);
-        msgimage.setImageResource(mData.getImgId());
-        msgtitel.setText(mData.getTitle());
-        msgendtime.setText(mData.getEndtime());
+    @Override
+    public void hideLoading() {
+
     }
 
     //添加list数据
     public void initData() {
-        SubjectPresenter subjectPresenter=new SubjectPresenter();
-        Subject subject;
         subjectList=subjectPresenter.subjectList;
+        Subject subject;
         if (subjectList==null) return;
         else
-        for (int i = 0; i < subjectList.size(); i++) {
-            subject = subjectList.get(i);
-            mAdapter.add(new MyListViewData(R.drawable.xingxing, subject.getSubtitle(),"编号：",subject.getCode()));
-        }
+            for (int i = 0; i < subjectList.size(); i++) {
+                subject = subjectList.get(i);
+                mAdapter.add(new MyListViewData(R.drawable.xingxing1, subject.getSubtitle(),"编号：",subject.getCode()));
+            }
     }
 }

@@ -8,8 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
+import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
 import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IUserLoginView;
-import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
+import com.example.dxnima.zhidao.biz.personcenter.SubjectPresenter;
 import com.example.dxnima.zhidao.biz.personcenter.UserPresenter;
 import com.example.dxnima.zhidao.constant.Event;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
@@ -144,7 +145,6 @@ public class LoginActivity extends BaseActivity implements IUserLoginView{
 
     @Override
     public void onSuccess() {
-        MsgPresenter mMsgPresenter=new MsgPresenter();
         //成功打开新界面homeactivity 主界面
         Intent intent = new Intent(this,HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的 activity
@@ -159,6 +159,13 @@ public class LoginActivity extends BaseActivity implements IUserLoginView{
 
     @Override
     public void hideLoading() {
+    }
 
+    //进入主界面请求得到以下数据
+    public void allRequst(){
+        SubjectPresenter subjectPresenter=new SubjectPresenter();
+        GetSubjectPresenter getSubjectPresenter=new GetSubjectPresenter();
+        subjectPresenter.allSendSubject();//所有发布的主题
+        getSubjectPresenter.allFocusSubject();//所有关注的主题
     }
 }

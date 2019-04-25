@@ -26,21 +26,23 @@ public class MsgPresenter extends BasePresenter<IMsgView> {
      * 请求参数code
      * */
     public void allMsgByCode(String code){
+        mvpView.showLoading();
         OkHttpManager httpManager = BridgeFactory.getBridge(Bridges.HTTP);
-        httpManager.requestAsyncPost(URLUtil.MSG_ALLSENDMSG, new ITRequestResult<Msg>() {
+        httpManager.requestAsyncPostByTag(URLUtil.MSG_ALLSENDMSG,getName(), new ITRequestResult<Msg>() {
             @Override
             public void onSuccessful(List<Msg> entity) {
                 msgList=entity;
+                mvpView.onSuccess();
             }
 
             @Override
             public void onFailure(String errorMsg) {
-
+                mvpView.onError(errorMsg,"加载失败！");
             }
 
             @Override
             public void onCompleted() {
-
+                mvpView.hideLoading();
             }
         }, Msg.class, new Param("code",code));
     }

@@ -87,7 +87,6 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
      * onEventMainThread都会在UI线程中执行，接收事件就会在UI线程中运行
      * */
     public void onEventMainThread(Event event) {
-
     }
 
     /**
