@@ -3,9 +3,11 @@ package com.example.dxnima.zhidao.ui.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dxnima.zhidao.R;
 import com.example.dxnima.zhidao.ZDApplication;
@@ -15,7 +17,10 @@ import com.example.dxnima.zhidao.bridge.BridgeFactory;
 import com.example.dxnima.zhidao.bridge.Bridges;
 import com.example.dxnima.zhidao.bridge.http.OkHttpManager;
 import com.example.dxnima.zhidao.constant.Event;
+import com.example.dxnima.zhidao.view.DragFloatButton.AnimationUtil;
+import com.example.dxnima.zhidao.view.DragFloatButton.FloatingDraftButton;
 
+import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 
 /**
@@ -30,15 +35,19 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
 
     /**
      * 返回按钮
-     */
-    private LinearLayout back;
-
-    /**
      * 标题，右边字符
      */
+    private LinearLayout back;
     protected TextView title, right;
-
     public BasePresenter presenter;
+
+    /**
+     * 悬浮按钮
+     * */
+    private FloatingDraftButton menu_FDB;
+    private FloatingActionButton floatingActionButton1;
+    private FloatingActionButton floatingActionButton2;
+    private FloatingActionButton floatingActionButton3;
 
     public final String TAG = this.getClass().getSimpleName();
 
@@ -69,6 +78,24 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
         back.setOnClickListener(this);
     }
 
+    /**
+     * 初始化悬浮菜单
+     * */
+    @Override
+    public void setMenu(){
+        menu_FDB=(FloatingDraftButton) findViewById(R.id.menu_FDB);
+        floatingActionButton1=(FloatingActionButton) findViewById(R.id.floatingActionButton_1);
+        floatingActionButton2=(FloatingActionButton) findViewById(R.id.floatingActionButton_2);
+        floatingActionButton3=(FloatingActionButton) findViewById(R.id.floatingActionButton_3);
+        ButterKnife.bind(this);
+        menu_FDB.registerButton(floatingActionButton1);
+        menu_FDB.registerButton(floatingActionButton2);
+        menu_FDB.registerButton(floatingActionButton3);
+        menu_FDB.setOnClickListener(this);
+        floatingActionButton1.setOnClickListener(this);
+        floatingActionButton2.setOnClickListener(this);
+        floatingActionButton3.setOnClickListener(this);
+    }
 
     /**
      * 点击事件
@@ -78,6 +105,18 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
         switch (v.getId()) {
             case R.id.ll_back:
                 finish();
+                break;
+            case R.id.menu_FDB://弹出动态Button
+                AnimationUtil.slideButtons(BaseActivity.this, menu_FDB);
+                break;
+            case R.id.floatingActionButton_1:
+                Toast.makeText(getApplicationContext(), "floatingActionButton_1", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.floatingActionButton_2:
+                Toast.makeText(getApplicationContext(), "floatingActionButton_2", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.floatingActionButton_3:
+                Toast.makeText(getApplicationContext(), "floatingActionButton_3", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -161,3 +200,17 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
     }
 
 }
+
+//悬浮菜单点击事件
+//        menuYellow.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
+//            @Override
+//            public void onMenuToggle(boolean opened) {
+//                String text;
+//                if (opened) {
+//                    text = "Menu opened";
+//                } else {
+//                    text = "Menu closed";
+//                }
+//                Toast.makeText(BaseActivity.this, text, Toast.LENGTH_SHORT).show();
+//            }
+//        });

@@ -45,21 +45,23 @@ public class GetSubjectPresenter extends BasePresenter<IGetSubjectView> {
      * 查询所有关注的主题
      * */
     public void allFocusSubject(){
+        mvpView.showLoading();
         OkHttpManager httpManager = BridgeFactory.getBridge(Bridges.HTTP);
-        httpManager.requestAsyncGet(URLUtil.GETSUBJECT_ALLFOCUS, new ITRequestResult<Subject>() {
+        httpManager.requestAsyncGetByTag(URLUtil.GETSUBJECT_ALLFOCUS, getName(), new ITRequestResult<Subject>() {
             @Override
             public void onSuccessful(List<Subject> entity) {
-                focusSubjectList=entity;
+                focusSubjectList = entity;
+                mvpView.onSuccess();
             }
 
             @Override
             public void onFailure(String errorMsg) {
-
+                mvpView.onError(errorMsg, "请求失败！");
             }
 
             @Override
             public void onCompleted() {
-
+                mvpView.hideLoading();
             }
         }, Subject.class);
     }

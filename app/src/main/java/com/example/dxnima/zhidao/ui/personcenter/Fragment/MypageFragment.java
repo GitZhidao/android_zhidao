@@ -35,7 +35,8 @@ public class MypageFragment extends Fragment{
         super.onCreate(savedInstanceState);
         userPresenter=new UserPresenter();
         user=new User();
-        user=userPresenter.userList.get(0);
+        if (userPresenter.userList!=null)
+            user=userPresenter.userList.get(0);
     }
 
     @Override

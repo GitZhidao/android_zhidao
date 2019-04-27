@@ -25,4 +25,8 @@ public interface CreateInit {
      */
     public void setHeader();
 
+    /**
+     * 初始化悬浮菜单
+     * */
+    public void setMenu();
 }

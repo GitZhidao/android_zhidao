@@ -9,21 +9,18 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import com.example.dxnima.zhidao.R;
-import com.example.dxnima.zhidao.bean.table.Msg;
-import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
-import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
+import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
+import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IGetSubjectView;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
 import com.example.dxnima.zhidao.ui.personcenter.Fragment.MainFragment;
 import com.example.dxnima.zhidao.ui.personcenter.Fragment.MypageFragment;
-
-import java.util.List;
 
 /**
  * 主页面
  * 对应xml:activity_home.xml
  * Created by DXnima on 2019/4/1.
  */
-public class HomeActivity extends BaseActivity implements IMsgView{
+public class HomeActivity extends BaseActivity implements IGetSubjectView{
 
     //定义fragment
     private MypageFragment mypageFragment;
@@ -42,11 +39,10 @@ public class HomeActivity extends BaseActivity implements IMsgView{
     /**
      * listview控件初始化
      * */
-
     private FrameLayout fragment_container;
 
-    private MsgPresenter mMsgPresenter;
-    private List<Msg> msgList=null;
+    private GetSubjectPresenter getSubjectPresenter;
+
     /**
      * Activity非正常销毁之后
      * 用onCreate
@@ -55,9 +51,10 @@ public class HomeActivity extends BaseActivity implements IMsgView{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_home);
+        setMenu();//添加悬浮按钮
         super.onCreate(savedInstanceState);
-        presenter = mMsgPresenter = new MsgPresenter();
-        mMsgPresenter.attachView(this);
+        presenter = getSubjectPresenter = new GetSubjectPresenter();
+        getSubjectPresenter.attachView(this);
         fragmentManager = getFragmentManager();
         setChioceItem(0); // 初始化页面加载时显示第一个选项卡
     }
@@ -115,7 +112,8 @@ public class HomeActivity extends BaseActivity implements IMsgView{
     }
 
     @Override
-    public void onSuccess(){}
+    public void onSuccess(){
+    }
 
     @Override
     public void showLoading(){}

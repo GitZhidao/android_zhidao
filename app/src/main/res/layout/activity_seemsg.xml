@@ -47,5 +47,4 @@
             android:layout_below="@+id/msgText"/>
 
     </RelativeLayout>
-
 </LinearLayout>
