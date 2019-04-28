@@ -26,12 +26,17 @@
     <string name="register_code">请输入验证码</string>
     <string name="register_getcode">获取验证码</string>
     <string name="register_title">注册</string>
+    <string name="register_haveusername_login">已有账号,直接登录</string>
     <string name="search_menu_title">Search</string>
     <string name="send_message_end_time">结束时间:</string>
     <string name="send_message_hint">请输入主题内容...</string>
     <string name="send_message_position">地点:</string>
     <string name="send_message_start_time">开始时间:</string>
+    <string name="send_message_Title">标题:</string>
     <string name="send_message_title">发布主题</string>
+    <string name="send_message_tag">标签</string>
+    <string name="send_message_addtag">添加标签</string>
+    <string name="send_message_map_point">地图上选点</string>
     <string name="server_connect_error">网络断开，请检查网络设置</string>
     <string name="server_timeout_error">网络超时，请检查网络设置</string>
     <string name="setting_logout">退出登录</string>
@@ -39,9 +44,10 @@
     <string name="setting_sound">声音与提醒</string>
     <string name="setting_title">设置</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="submit">确定</string>暂无主题~
+    <string name="submit">确定</string>
     <string name="nomsg">暂无通知~</string>
     <string name="noempty">暂无主题~</string>
     <string name="list_english">英语考试</string>
     <string name="list_time">10月01日 00：00</string>
+    <string name="pop_add_lable">添加一个标签</string>
 </resources>

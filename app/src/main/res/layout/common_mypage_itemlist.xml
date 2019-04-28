@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    n1:orientation="horizontal"
+    n1:layout_width="fill_parent"
+    n1:layout_height="150.0dip"
+    xmlns:n1="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.widget.CardView
+        n1:id="@+id/cv_theme"
+        n1:layout_width="fill_parent"
+        n1:layout_height="fill_parent"
+        n1:layout_marginLeft="@dimen/dp_40"
+        n1:layout_marginTop="@dimen/dp_15"
+        n1:layout_marginRight="@dimen/dp_15"
+        n2:cardCornerRadius="@dimen/dp_15"
+        n2:layout_constraintBottom_toBottomOf="parent"
+        n2:layout_constraintLeft_toRightOf="parent"
+        n2:layout_constraintRight_toRightOf="parent"
+        n2:layout_constraintTop_toTopOf="parent"
+        xmlns:n2="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            n1:orientation="vertical"
+            n1:background="@color/white"
+            n1:padding="@dimen/dp_10"
+            n1:layout_width="fill_parent"
+            n1:layout_height="fill_parent">
+
+            <TextView
+                n1:textSize="@dimen/sp_16"
+                n1:id="@+id/tv_theme_title"
+                n1:layout_width="fill_parent"
+                n1:layout_height="wrap_content"
+                n1:text="@string/list_english" />
+
+            <TextView
+                n1:textSize="@dimen/sp_14"
+                n1:ellipsize="end"
+                n1:id="@+id/tv_theme_content"
+                n1:paddingTop="@dimen/dp_10"
+                n1:layout_width="fill_parent"
+                n1:layout_height="wrap_content"
+                n1:text="英语考试英语考试英语考试英语考试英语考试英语考试英语考试英语考试英语考试英语考试英语考试英语考试英语考试英语考试"
+                n1:maxLines="3"
+                n1:layout_below="@id/tv_theme_title" />
+
+            <TextView
+                n1:textSize="@dimen/sp_14"
+                n1:id="@+id/tv_dead_time"
+                n1:layout_width="wrap_content"
+                n1:layout_height="wrap_content"
+                n1:text="结束时间:2019-04-15 10:00"
+                n1:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <View
+        n1:id="@id/view_line"
+        n1:background="@color/gray0"
+        n1:layout_width="@dimen/dp_1"
+        n1:layout_height="wrap_content"
+        n1:layout_marginLeft="@dimen/dp_25"
+        n3:layout_constraintBottom_toBottomOf="parent"
+        n3:layout_constraintLeft_toLeftOf="parent"
+        n3:layout_constraintTop_toTopOf="parent"
+        xmlns:n3="http://schemas.android.com/apk/res-auto" />
+
+    <ImageView
+        n1:layout_width="wrap_content"
+        n1:layout_height="wrap_content"
+        n1:src="@drawable/orange_circle"
+        n1:layout_alignParentBottom="true"
+        n4:layout_constraintBottom_toBottomOf="@id/cv_theme"
+        n4:layout_constraintLeft_toLeftOf="@id/view_line"
+        n4:layout_constraintRight_toRightOf="@id/view_line"
+        xmlns:n4="http://schemas.android.com/apk/res-auto" />
+
+</android.support.constraint.ConstraintLayout>

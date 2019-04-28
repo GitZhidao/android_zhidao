@@ -12,13 +12,13 @@
             app:rippleColor="@color/app_primary"
             app:backgroundTint="@color/app_primary_dark"
             android:src="@drawable/fab_add"
-            app:elevation="6dp"
-            app:borderWidth="0dp"
-            app:pressedTranslationZ="12dp"
+            app:elevation="@dimen/dp_6"
+            app:borderWidth="@dimen/dp_0"
+            app:pressedTranslationZ="@dimen/dp_12"
             app:fabSize="normal"
-            android:layout_marginBottom="94dp"
+            android:layout_marginBottom="@dimen/dp_100"
             android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/floatingActionButton_2"/>
+            android:layout_alignLeft="@id/floatingActionButton_2"/>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton_1"
         android:layout_height="wrap_content"
@@ -26,12 +26,12 @@
         app:rippleColor="@color/app_primary"
         app:backgroundTint="@color/app_primary_dark"
         android:src="@drawable/ic_edit"
-        app:elevation="6dp"
-        app:borderWidth="0dp"
-        app:pressedTranslationZ="12dp"
+        app:elevation="@dimen/dp_6"
+        app:borderWidth="@dimen/dp_0"
+        app:pressedTranslationZ="@dimen/dp_12"
         app:fabSize="normal"
         android:visibility="invisible"
-        android:layout_above="@+id/menu_FDB"
+        android:layout_above="@id/menu_FDB"
         android:layout_alignParentRight="true"
         android:layout_marginRight="47dp"/>
     <android.support.design.widget.FloatingActionButton
@@ -41,15 +41,15 @@
         app:rippleColor="@color/app_primary"
         app:backgroundTint="@color/app_primary_dark"
         android:src="@drawable/ic_addsubject"
-        app:elevation="6dp"
-        app:borderWidth="0dp"
-        app:pressedTranslationZ="12dp"
+        app:elevation="@dimen/dp_6"
+        app:borderWidth="@dimen/dp_0"
+        app:pressedTranslationZ="@dimen/dp_12"
         app:fabSize="normal"
         android:visibility="invisible"
 
-        android:layout_above="@+id/floatingActionButton_1"
+        android:layout_above="@id/floatingActionButton_1"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="47dp"/>
+        android:layout_marginRight="@dimen/dp_47"/>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton_3"
         android:layout_height="wrap_content"
@@ -57,12 +57,12 @@
         app:rippleColor="@color/app_primary"
         app:backgroundTint="@color/app_primary_dark"
         android:src="@drawable/ic_star"
-        app:elevation="6dp"
-        app:borderWidth="0dp"
-        app:pressedTranslationZ="12dp"
+        app:elevation="@dimen/dp_6"
+        app:borderWidth="@dimen/dp_0"
+        app:pressedTranslationZ="@dimen/dp_12"
         app:fabSize="normal"
         android:visibility="invisible"
-        android:layout_above="@+id/floatingActionButton_2"
+        android:layout_above="@id/floatingActionButton_2"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="47dp"/>
+        android:layout_marginRight="@dimen/dp_47"/>
 </RelativeLayout>

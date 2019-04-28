@@ -13,7 +13,7 @@ import com.example.dxnima.zhidao.bean.table.Msg;
 import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
 import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
-import com.example.dxnima.zhidao.view.MyAdapter;
+import com.example.dxnima.zhidao.view.MyListViewAdapter;
 import com.example.dxnima.zhidao.view.MyListViewData;
 
 import java.util.LinkedList;
@@ -28,7 +28,7 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
     private ListView listMsg;
     private TextView allMsg_text;
 
-    private MyAdapter mAdapter = null;
+    private MyListViewAdapter mAdapter = null;
     private List<MyListViewData> mData = null;
     private List<Msg> msgList=null;
     private MsgPresenter mMsgPresenter;
@@ -49,9 +49,9 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
     public void initViews() {
         bundle=new Bundle();
         mData = new LinkedList<MyListViewData>();
-        mAdapter = new MyAdapter((LinkedList<MyListViewData>) mData,this);
-        searchMsg=(SearchView) findViewById(R.id.searchMsg);
-        listMsg=(ListView) findViewById(R.id.listMsg);
+        mAdapter = new MyListViewAdapter((LinkedList<MyListViewData>) mData,this);
+        searchMsg=(SearchView) findViewById(R.id.allmsg_searchMsg);
+        listMsg=(ListView) findViewById(R.id.allmsg_listMsg);
         allMsg_text=(TextView) findViewById(R.id.allmsg_text);
         listMsg.setAdapter(mAdapter);
         allMsg_text.setText("暂无通知~");
@@ -72,8 +72,6 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.home_msg:
-                break;
         }
         super.onClick(v);
     }
@@ -110,7 +108,8 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
         else
             for (int i = 0; i < msgList.size(); i++) {
                 msg = msgList.get(i);
-                mAdapter.add(new MyListViewData(R.drawable.xingxing, msg.getTitle(),"结束时间：",msg.getEndtime()));
+                mAdapter.add(new MyListViewData(R.mipmap.five_star, msg.getTitle(),"结束时间：",msg
+                        .getEndtime()));
             }
     }
 

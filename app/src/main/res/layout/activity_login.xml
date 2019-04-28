@@ -1,136 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<android.support.constraint.ConstraintLayout
+    n1:layout_width="fill_parent"
+    n1:layout_height="fill_parent"
+    xmlns:n1="http://schemas.android.com/apk/res/android">
 
     <include layout="@layout/common_title"
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        n1:layout_alignParentTop="true"
+        n1:layout_width="match_parent"
+        n1:layout_height="wrap_content" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+    <ImageView
+        n1:id="@+id/updatepsd_pictureUser"
+        n1:layout_width="@dimen/dp_80"
+        n1:layout_height="@dimen/dp_80"
+        n1:layout_marginTop="@dimen/dp_60"
+        n1:src="@drawable/logo"
+        n2:layout_constraintLeft_toLeftOf="parent"
+        n2:layout_constraintRight_toRightOf="parent"
+        n2:layout_constraintTop_toTopOf="parent"
+        xmlns:n2="http://schemas.android.com/apk/res-auto" />
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/pictureUser"
-            android:layout_marginTop="41dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+    <EditText n1:textSize="@dimen/sp_14"
+        n1:id="@+id/login_username"
+        n1:background="@drawable/et_stroke_shape"
+        n1:paddingLeft="@dimen/dp_10"
+        n1:layout_width="fill_parent"
+        n1:layout_height="@dimen/dp_40"
+        n1:layout_marginLeft="@dimen/dp_20"
+        n1:layout_marginTop="@dimen/dp_30"
+        n1:layout_marginRight="@dimen/dp_20"
+        n1:hint="@string/login_username"
+        n3:layout_constraintLeft_toLeftOf="parent"
+        n3:layout_constraintRight_toRightOf="parent"
+        n3:layout_constraintTop_toBottomOf="@id/updatepsd_pictureUser"
+        xmlns:n3="http://schemas.android.com/apk/res-auto" />
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:paddingLeft="15dp"
-            android:hint="请输入用户名"
-            android:background="@drawable/edittext_shape"
-            android:layout_marginTop="37dp"
-            android:layout_below="@+id/pictureUser"
-            android:layout_centerHorizontal="true" />
+    <EditText
+        n1:textSize="@dimen/sp_14"
+        n1:id="@+id/login_password"
+        n1:background="@drawable/et_stroke_shape"
+        n1:paddingLeft="@dimen/dp_10"
+        n1:layout_width="fill_parent"
+        n1:layout_height="@dimen/dp_40"
+        n1:layout_marginLeft="@dimen/dp_20"
+        n1:layout_marginTop="@dimen/dp_30"
+        n1:layout_marginRight="@dimen/dp_20"
+        n1:hint="@string/login_pwd"
+        n1:inputType="textPassword"
+        n4:layout_constraintLeft_toLeftOf="parent"
+        n4:layout_constraintRight_toRightOf="parent"
+        n4:layout_constraintTop_toBottomOf="@id/login_username"
+        xmlns:n4="http://schemas.android.com/apk/res-auto" />
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:paddingLeft="15dp"
-            android:inputType="textPassword"
-            android:hint="请输入密码"
-            android:background="@drawable/edittext_shape"
-            android:layout_marginTop="31dp"
-            android:layout_below="@+id/username"
-            android:layout_alignLeft="@+id/username"
-            android:layout_alignStart="@+id/username" />
+    <Button xmlns:n5="http://schemas.android.com/apk/res-auto"
+        n1:id="@+id/login_login"
+        n1:layout_width="fill_parent"
+        n1:layout_height="@dimen/dp_35"
+        n1:layout_marginLeft="@dimen/dp_20"
+        n1:layout_marginRight="@dimen/dp_20"
+        n1:layout_marginTop="@dimen/dp_30"
+        n1:background="@drawable/btn_blue_shape"
+        n1:text="@string/login_btn"
+        n1:textColor="@color/white"
+        n1:textSize="@dimen/sp_14"
+        n5:layout_constraintLeft_toLeftOf="parent"
+        n5:layout_constraintRight_toRightOf="parent"
+        n5:layout_constraintTop_toBottomOf="@id/login_password" />
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="64dp"
-            android:text="登录"
-            android:background="@drawable/button_shape"
-            android:layout_below="@+id/go_register"
-            android:layout_alignLeft="@+id/go_register"
-            android:layout_alignStart="@+id/go_register" />
+    <TextView xmlns:n6="http://schemas.android.com/apk/res-auto"
+        n1:id="@+id/login_go_updatepassword"
+        n1:layout_width="wrap_content"
+        n1:layout_height="wrap_content"
+        n1:layout_marginTop="@dimen/dp_20"
+        n1:text="@string/login_rpwd"
+        n1:textColor="@color/gray1"
+        n1:textSize="@dimen/sp_14"
+        n6:layout_constraintRight_toRightOf="@id/login_login"
+        n6:layout_constraintTop_toBottomOf="@id/login_login" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="注       册"
-            android:id="@+id/go_register"
-            android:textSize="16dp"
-            android:textIsSelectable="false"
-            android:layout_alignTop="@+id/go_updatepassword"
-            android:layout_alignLeft="@+id/password"
-            android:layout_alignStart="@+id/password"
-            android:textColor="@color/gray1"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+    <TextView xmlns:n7="http://schemas.android.com/apk/res-auto"
+        n1:id="@+id/login_go_register"
+        n1:layout_width="wrap_content"
+        n1:layout_height="wrap_content"
+        n1:layout_marginTop="@dimen/dp_20"
+        n1:text="@string/login_regist"
+        n1:textColor="@color/gray1"
+        n1:textSize="@dimen/sp_14"
+        n7:layout_constraintLeft_toLeftOf="@id/login_login"
+        n7:layout_constraintTop_toBottomOf="@id/login_login" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="忘记密码？"
-            android:id="@+id/go_updatepassword"
-            android:textSize="16dp"
-            android:textColor="@color/gray1"
-            android:layout_below="@+id/password"
-            android:layout_alignRight="@+id/login"
-            android:layout_alignEnd="@+id/login"
-            android:layout_marginTop="38dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="其他登陆方式"
-            android:id="@+id/other_login"
-            android:textIsSelectable="true"
-            android:layout_above="@+id/imageView3"
-            android:layout_alignLeft="@+id/pictureUser"
-            android:layout_alignStart="@+id/pictureUser" />
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="10dp"
-            android:id="@+id/imageView3"
-            android:src="@drawable/login_line"
-            android:layout_above="@+id/qq_login"
-            android:layout_centerHorizontal="true" />
+    <LinearLayout
+        n1:orientation="horizontal"
+        n1:id="@+id/ll_login_other"
+        n1:layout_width="wrap_content"
+        n1:layout_height="wrap_content"
+        n1:layout_marginBottom="@dimen/dp_20"
+        n8:layout_constraintBottom_toBottomOf="parent"
+        n8:layout_constraintLeft_toLeftOf="parent"
+        n8:layout_constraintRight_toRightOf="parent"
+        xmlns:n8="http://schemas.android.com/apk/res-auto">
 
         <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:id="@+id/qq_login"
-            android:src="@drawable/login_qq"
-            android:layout_marginBottom="32dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/other_login"
-            android:layout_toStartOf="@+id/other_login" />
+            n1:id="@+id/login_qq_login"
+            n1:layout_width="@dimen/dp_30"
+            n1:layout_height="@dimen/dp_30"
+            n1:layout_marginRight="@dimen/dp_20"
+            n1:src="@drawable/login_qq" />
 
         <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:id="@+id/wecat_login"
-            android:layout_below="@+id/imageView3"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/login_wecat"/>
+            n1:id="@+id/login_wecat_login"
+            n1:layout_width="@dimen/dp_30"
+            n1:layout_height="@dimen/dp_30"
+            n1:layout_marginRight="@dimen/dp_20"
+            n1:src="@drawable/login_wecat" />
 
         <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:id="@+id/webo_login"
-            android:layout_below="@+id/imageView3"
-            android:layout_toRightOf="@+id/pictureUser"
-            android:layout_toEndOf="@+id/pictureUser"
-            android:src="@drawable/login_webo"/>
+            n1:id="@+id/login_webo_login"
+            n1:layout_width="@dimen/dp_30"
+            n1:layout_height="@dimen/dp_30"
+            n1:src="@drawable/login_webo" />
 
+    </LinearLayout>
+    <View n1:background="@color/gray0"
+        n1:layout_width="fill_parent"
+        n1:layout_height="@dimen/dp_1"
+        n1:layout_marginLeft="@dimen/dp_80"
+        n1:layout_marginRight="@dimen/dp_80"
+        n1:layout_marginBottom="@dimen/dp_10"
+        n9:layout_constraintBottom_toTopOf="@id/ll_login_other"
+        n9:layout_constraintLeft_toLeftOf="parent"
+        n9:layout_constraintRight_toRightOf="parent"
+        xmlns:n9="http://schemas.android.com/apk/res-auto" />
 
-    </RelativeLayout>
+    <TextView xmlns:n10="http://schemas.android.com/apk/res-auto"
+        n1:id="@+id/login_other_login"
+        n1:layout_width="wrap_content"
+        n1:layout_height="wrap_content"
+        n1:layout_marginBottom="@dimen/dp_30"
+        n1:text="@string/login_by_other"
+        n1:textSize="@dimen/sp_14"
+        n10:layout_constraintBottom_toTopOf="@id/ll_login_other"
+        n10:layout_constraintLeft_toLeftOf="parent"
+        n10:layout_constraintRight_toRightOf="parent" />
 
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

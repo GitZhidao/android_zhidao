@@ -15,29 +15,29 @@
 
         <SearchView
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:id="@+id/searchMsg"
+            android:layout_height="@dimen/dp_40"
+            android:id="@+id/allmsg_searchMsg"
             android:background="@drawable/searchview_shape"
-            android:queryHint="Search"
+            android:queryHint="@string/message_search_title"
             android:clickable="true"
             android:layout_alignParentTop="true"/>
 
         <ListView
+            android:id="@+id/allmsg_listMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listMsg"
-            android:background="@color/gray"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:footerDividersEnabled="false"
-            android:layout_below="@+id/searchMsg"/>
+            android:layout_below="@id/allmsg_searchMsg"
+            android:background="@color/gray"
+            android:footerDividersEnabled="false" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/allmsg_text"
-            android:textSize="24dp"
-            android:text="暂无通知~"
+            android:textSize="@dimen/sp_24"
+            android:text="@string/nomsg"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"/>
 

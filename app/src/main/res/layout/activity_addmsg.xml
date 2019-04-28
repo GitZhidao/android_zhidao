@@ -1,52 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout n1:background="@color/white"
+    n1:layout_width="fill_parent"
+    n1:layout_height="fill_parent"
+    xmlns:n1="http://schemas.android.com/apk/res/android">
 
-    <include
-        layout="@layout/common_title"
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+    <include layout="@layout/common_title"
+        n1:layout_alignParentTop="true"
+        n1:layout_width="match_parent"
+        n1:layout_height="wrap_content"
+        n1:id="@+id/include"/>
+
+    <LinearLayout
+        n1:orientation="horizontal"
+        n1:id="@+id/ll_title"
+        n1:paddingLeft="@dimen/dp_15"
+        n1:paddingTop="@dimen/dp_10"
+        n1:paddingRight="@dimen/dp_15"
+        n1:layout_width="fill_parent"
+        n1:layout_height="wrap_content"
+        n2:layout_constraintTop_toBottomOf="@id/include"
+        xmlns:n2="http://schemas.android.com/apk/res-auto">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView2"
-            android:layout_marginLeft="41dp"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="29dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            n1:textSize="@dimen/sp_14"
+            n1:layout_width="wrap_content"
+            n1:layout_height="wrap_content"
+            n1:text="@string/send_message_Title" />
+
+        <EditText
+            n1:textSize="@dimen/sp_14"
+            n1:textColor="@color/black0"
+            n1:id="@+id/et_title"
+            n1:layout_width="fill_parent"
+            n1:layout_height="wrap_content"
+            n1:maxLines="2" />
+
+    </LinearLayout>
+
+    <EditText
+        n1:textSize="@dimen/sp_14"
+        n1:textColor="@color/black0"
+        n1:gravity="center|left|top"
+        n1:id="@+id/et_message"
+        n1:background="@drawable/shape_white_stroke_bg"
+        n1:padding="@dimen/dp_8"
+        n1:layout_width="fill_parent"
+        n1:layout_height="@dimen/dp_100"
+        n1:layout_marginLeft="@dimen/dp_15"
+        n1:layout_marginTop="@dimen/dp_10"
+        n1:layout_marginRight="@dimen/dp_15"
+        n1:hint="@string/send_message_hint"
+        n1:inputType="textMultiLine"
+        n2:layout_constraintLeft_toLeftOf="parent"
+        n2:layout_constraintRight_toRightOf="parent"
+        n2:layout_constraintTop_toBottomOf="@id/ll_title"
+        xmlns:n2="http://schemas.android.com/apk/res-auto" />
+
+    <LinearLayout
+        n1:id="@+id/ll_start_time"
+        n1:layout_width="fill_parent"
+        n1:layout_height="wrap_content"
+        n1:layout_marginLeft="@dimen/dp_15"
+        n1:layout_marginRight="@dimen/dp_15"
+        n3:layout_constraintTop_toBottomOf="@id/et_message"
+        xmlns:n3="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            n1:textSize="@dimen/sp_14"
+            n1:layout_width="wrap_content"
+            n1:layout_height="wrap_content"
+            n1:text="@string/send_message_start_time" />
+
+        <EditText
+            n1:textSize="@dimen/sp_14"
+            n1:id="@+id/et_start_time"
+            n1:paddingLeft="@dimen/dp_10"
+            n1:focusable="false"
+            n1:layout_width="fill_parent"
+            n1:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        n1:id="@+id/ll_end_time"
+        n1:layout_width="fill_parent"
+        n1:layout_height="wrap_content"
+        n1:layout_marginLeft="@dimen/dp_15"
+        n1:layout_marginRight="@dimen/dp_15"
+        n4:layout_constraintTop_toBottomOf="@id/ll_start_time"
+        xmlns:n4="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            n1:textSize="@dimen/sp_14"
+            n1:layout_width="wrap_content"
+            n1:layout_height="wrap_content"
+            n1:text="@string/send_message_end_time" />
+
+        <EditText
+            n1:textSize="@dimen/sp_14"
+            n1:id="@+id/et_end_time"
+            n1:paddingLeft="@dimen/dp_10"
+            n1:focusable="false"
+            n1:layout_width="fill_parent"
+            n1:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        n1:orientation="vertical"
+        n1:id="@+id/ll_labels"
+        n1:paddingLeft="@dimen/dp_15"
+        n1:paddingTop="@dimen/dp_10"
+        n1:paddingRight="@dimen/dp_15"
+        n1:layout_width="fill_parent"
+        n1:layout_height="wrap_content"
+        n5:layout_constraintTop_toBottomOf="@id/ll_end_time"
+        xmlns:n5="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            n1:layout_width="fill_parent"
+            n1:layout_height="wrap_content">
+
+            <TextView
+                n1:textSize="@dimen/sp_14"
+                n1:layout_width="wrap_content"
+                n1:layout_height="wrap_content"
+                n1:text="@string/send_message_tag" />
+
+            <TextView
+                n1:textSize="@dimen/sp_14"
+                n1:id="@+id/tv_add_label"
+                n1:layout_width="wrap_content"
+                n1:layout_height="wrap_content"
+                n1:text="@string/send_message_addtag"
+                n1:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <com.zhy.view.flowlayout.FlowLayout
+            n1:id="@+id/gl_tags"
+            zhy:max_select="1"
+            n1:layout_width="fill_parent"
+            n1:layout_height="wrap_content"
+            xmlns:zhy="http://schemas.android.com/tools"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        n1:orientation="vertical"
+        n1:paddingLeft="@dimen/dp_15"
+        n1:paddingTop="@dimen/dp_10"
+        n1:paddingRight="@dimen/dp_15"
+        n1:layout_width="fill_parent"
+        n1:layout_height="wrap_content"
+        n6:layout_constraintTop_toBottomOf="@id/ll_labels"
+        xmlns:n6="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            n1:layout_width="fill_parent"
+            n1:layout_height="wrap_content">
+
+            <TextView
+                n1:textSize="@dimen/sp_14"
+                n1:layout_width="wrap_content"
+                n1:layout_height="wrap_content"
+                n1:text="@string/send_message_position"
+                n1:layout_centerVertical="true" />
+
+            <LinearLayout
+                n1:gravity="center"
+                n1:id="@+id/ll_map_position"
+                n1:layout_width="wrap_content"
+                n1:layout_height="wrap_content"
+                n1:layout_alignParentRight="true">
+
+                <TextView
+                    n1:textSize="@dimen/sp_14"
+                    n1:layout_width="wrap_content"
+                    n1:layout_height="wrap_content"
+                    n1:text="@string/send_message_map_point" />
+
+                <ImageView
+                    n1:layout_width="wrap_content"
+                    n1:layout_height="wrap_content"
+                    n1:src="@drawable/ic_pin_drop_blue" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <EditText
+            n1:textSize="@dimen/sp_14"
+            n1:id="@+id/et_position"
+            n1:layout_width="fill_parent"
+            n1:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        n1:gravity="center"
+        n1:orientation="horizontal"
+        n1:layout_width="fill_parent"
+        n1:layout_height="wrap_content"
+        n1:layout_marginBottom="@dimen/dp_20"
+        n7:layout_constraintBottom_toBottomOf="parent"
+        xmlns:n7="http://schemas.android.com/apk/res-auto">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="取消"
-            android:id="@+id/button"
-            android:layout_marginBottom="51dp"
-            android:background="@drawable/button_shape"
-            android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/textView2"
-            android:layout_alignStart="@+id/textView2"/>
+            n1:textSize="@dimen/sp_14"
+            n1:textColor="@color/white"
+            n1:id="@+id/btn_cancel"
+            n1:background="@drawable/btn_blue_shape"
+            n1:layout_width="@dimen/dp_120"
+            n1:layout_height="@dimen/dp_40"
+            n1:layout_marginRight="@dimen/dp_30"
+            n1:text="@string/cancel" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="确认"
-            android:id="@+id/button2"
-            android:background="@drawable/button_shape"
-            android:layout_alignTop="@+id/button"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="82dp"
-            android:layout_marginEnd="82dp"/>
-    </RelativeLayout>
-</LinearLayout>
+            n1:textSize="@dimen/sp_14"
+            n1:textColor="@color/white"
+            n1:id="@+id/btn_submit"
+            n1:background="@drawable/btn_blue_shape"
+            n1:layout_width="@dimen/dp_120"
+            n1:layout_height="@dimen/dp_40"
+            n1:text="@string/submit" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

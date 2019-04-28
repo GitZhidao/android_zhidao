@@ -200,17 +200,3 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
     }
 
 }
-
-//悬浮菜单点击事件
-//        menuYellow.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
-//            @Override
-//            public void onMenuToggle(boolean opened) {
-//                String text;
-//                if (opened) {
-//                    text = "Menu opened";
-//                } else {
-//                    text = "Menu closed";
-//                }
-//                Toast.makeText(BaseActivity.this, text, Toast.LENGTH_SHORT).show();
-//            }
-//        });
