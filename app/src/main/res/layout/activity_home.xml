@@ -46,6 +46,6 @@
             android:background="@android:color/transparent"
             android:src="@mipmap/sign1"
             android:focusableInTouchMode="true"
-            android:layout_alignTop="@+id/tabs_rg" android:contentDescription="@string/todo"/>
+            android:layout_alignTop="@+id/tabs_rg" android:contentDescription="TODO"/>
     <include layout="@layout/common_fabmenu"/>
 </RelativeLayout>
