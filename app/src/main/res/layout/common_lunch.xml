@@ -6,7 +6,7 @@
     android:background="@color/lunch">
 
     <FrameLayout
-        android:layout_width="413dp"
+        android:layout_width="@dimen/dp_410"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:background="@color/lunch">
@@ -14,8 +14,8 @@
         <pl.droidsonroids.gif.GifImageView
             android:background="@drawable/dong"
             android:layout_gravity="center"
-            android:layout_width="255dp"
-            android:layout_height="255dp"/>
+            android:layout_width="@dimen/dp_255"
+            android:layout_height="@dimen/dp_255"/>
 
 
 

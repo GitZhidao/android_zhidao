@@ -16,12 +16,12 @@ import java.util.LinkedList;
  *listView适配器
  * Created by Jay on 2015/9/21 0021.
  */
-public class MyAdapter extends BaseAdapter {
+public class MyListViewAdapter extends BaseAdapter {
 
     private Context mContext;
     private LinkedList<MyListViewData> mData;
 
-    public MyAdapter(LinkedList<MyListViewData> mData,Context mContext) {
+    public MyListViewAdapter(LinkedList<MyListViewData> mData, Context mContext) {
         this.mData = mData;
         this.mContext = mContext;
     }

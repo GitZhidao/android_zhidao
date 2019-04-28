@@ -45,12 +45,12 @@ public class RegisterActivity extends BaseActivity implements IUserLoginView{
 
     @Override
     public void initViews() {
-        username=(EditText) findViewById(R.id.username);
-        password=(EditText) findViewById(R.id.password);
-        email=(EditText) findViewById(R.id.email);
-        getCode=(EditText) findViewById(R.id.getCode);
-        register=(Button) findViewById(R.id.register);
-        textView=(TextView) findViewById(R.id.textView);
+        username=(EditText) findViewById(R.id.register_username);
+        password=(EditText) findViewById(R.id.register_password);
+        email=(EditText) findViewById(R.id.register_email);
+        getCode=(EditText) findViewById(R.id.register_getCode);
+        register=(Button) findViewById(R.id.register_btn);
+        textView=(TextView) findViewById(R.id.register_setcode);
     }
 
     // 初始化公共头部
@@ -92,10 +92,10 @@ public class RegisterActivity extends BaseActivity implements IUserLoginView{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.register:
+            case R.id.register_btn:
                 mUserPresenter.registerInternet(username.getText().toString(), password.getText().toString(),email.getText().toString());
                 break;
-            case R.id.textView:
+            case R.id.register_setcode:
                 //获取验证码
                 break;
         }

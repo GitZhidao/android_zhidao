@@ -7,54 +7,54 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="66dp">
+        android:layout_height="@dimen/dp_66">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="英语考试"
+            android:text="@string/list_english"
             android:id="@+id/list_msgtitle"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:textSize="18dp"/>
+            android:textSize="@dimen/sp_16"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="结束时间："
+            android:text="@string/send_message_end_time"
             android:id="@+id/list_texttime"
             android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/list_msgendtime"
-            android:layout_toStartOf="@+id/list_msgendtime"/>
+            android:layout_toLeftOf="@id/list_msgendtime"
+            android:layout_toStartOf="@id/list_msgendtime"/>
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_20"
             android:id="@+id/list_msgimage"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_20"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/list_msgtitle"
-            android:layout_toEndOf="@+id/list_msgtitle"/>
+            android:layout_toRightOf="@id/list_msgtitle"
+            android:layout_toEndOf="@id/list_msgtitle" />
 
         <ImageView
-            android:layout_width="30dp"
+            android:layout_width="@dimen/dp_30"
             android:layout_height="wrap_content"
             android:id="@+id/imageView4"
             android:layout_alignParentTop="true"
             android:src="@drawable/item_jiantou"
-            android:layout_above="@+id/list_msgendtime"
+            android:layout_above="@id/list_msgendtime"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10月01日 00：00"
+            android:text="@string/list_time"
             android:id="@+id/list_msgendtime"
             android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/imageView4"
-            android:layout_toStartOf="@+id/imageView4"/>
+            android:layout_toLeftOf="@id/imageView4"
+            android:layout_toStartOf="@id/imageView4"/>
     </RelativeLayout>
 </LinearLayout>

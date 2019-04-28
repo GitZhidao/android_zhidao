@@ -18,7 +18,7 @@ import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
 import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.ISubjectView;
 import com.example.dxnima.zhidao.biz.personcenter.SubjectPresenter;
 import com.example.dxnima.zhidao.ui.personcenter.Activity.AllmsgActivity;
-import com.example.dxnima.zhidao.view.MyAdapter;
+import com.example.dxnima.zhidao.view.MyListViewAdapter;
 import com.example.dxnima.zhidao.view.MyListViewData;
 
 import java.util.LinkedList;
@@ -33,7 +33,7 @@ public class MainFragment extends Fragment implements ISubjectView{
     private SearchView searchView;
     private ListView listMsg;
     private TextView txt_empty;
-    private MyAdapter mAdapter = null;
+    private MyListViewAdapter mAdapter = null;
     private List<MyListViewData> mData = null;
     private List<Subject> subjectList=null;
     private SubjectPresenter subjectPresenter;
@@ -46,16 +46,16 @@ public class MainFragment extends Fragment implements ISubjectView{
         subjectPresenter.attachView(this);
         subjectPresenter.allSendSubject();
         mData = new LinkedList<MyListViewData>();
-        mAdapter = new MyAdapter((LinkedList<MyListViewData>) mData,getActivity());
+        mAdapter = new MyListViewAdapter((LinkedList<MyListViewData>) mData,getActivity());
     }
 
     //创造View
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main, container, false);
-        searchView=(SearchView) view.findViewById(R.id.searchView);
-        listMsg=(ListView) view.findViewById(R.id.listSubject);
-        txt_empty=(TextView) view.findViewById(R.id.text_empty);
+        searchView=(SearchView) view.findViewById(R.id.main_searchView);
+        listMsg=(ListView) view.findViewById(R.id.main_listSubject);
+        txt_empty=(TextView) view.findViewById(R.id.main_text_empty);
         bindViews();
         return view;
     }
@@ -122,7 +122,8 @@ public class MainFragment extends Fragment implements ISubjectView{
         else
             for (int i = 0; i < subjectList.size(); i++) {
                 subject = subjectList.get(i);
-                mAdapter.add(new MyListViewData(R.drawable.xingxing1, subject.getSubtitle(),"编号：",subject.getCode()));
+                mAdapter.add(new MyListViewData(R.mipmap.one_star, subject.getSubtitle(),"编号：",
+                        subject.getCode()));
             }
     }
 }

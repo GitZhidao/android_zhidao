@@ -64,11 +64,11 @@ public class LoginActivity extends BaseActivity implements IUserLoginView{
      */
     @Override
     public void initViews() {
-        userName = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        login = (Button) findViewById(R.id.login);
-        go_register=(TextView) findViewById(R.id.go_register);
-        go_updatepassword=(TextView) findViewById(R.id.go_updatepassword);
+        userName = (EditText) findViewById(R.id.login_username);
+        password = (EditText) findViewById(R.id.login_password);
+        login = (Button) findViewById(R.id.login_login);
+        go_register=(TextView) findViewById(R.id.login_go_register);
+        go_updatepassword=(TextView) findViewById(R.id.login_go_updatepassword);
     }
 
 
@@ -89,12 +89,12 @@ public class LoginActivity extends BaseActivity implements IUserLoginView{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.login:mUserPresenter.loginInternet(userName.getText().toString(), password.getText().toString());//登陆
+            case R.id.login_login:mUserPresenter.loginInternet(userName.getText().toString(), password.getText().toString());//登陆
                 break;
-            case R.id.go_register:
+            case R.id.login_go_register:
                 startActivity(RegisterActivity.class,null);//点击注册跳转注册界面
                 break;
-            case R.id.go_updatepassword:
+            case R.id.login_go_updatepassword:
                 startActivity(UpdatepsdActivity.class,null);//点击修改密码跳转修改密码界面
                 break;
         }

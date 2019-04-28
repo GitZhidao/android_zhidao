@@ -7,14 +7,14 @@
 
     <LinearLayout
         android:id="@+id/ll_back"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
         android:gravity="left|center_vertical">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="@dimen/dp_8"
             android:src="@drawable/common_bt_navbar_back_normal" />
 
     </LinearLayout>
@@ -23,22 +23,22 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="@dimen/dp_16"
         android:layout_weight="1"
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="@dimen/sp_18"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_right"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginRight="@dimen/dp_16"
         android:layout_weight="0"
         android:gravity="right|center_vertical"
         android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:textSize="@dimen/sp_16" />
 </LinearLayout>

@@ -13,31 +13,32 @@
 
         <SearchView
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:id="@+id/searchView"
+                android:layout_height="@dimen/dp_40"
+                android:id="@+id/main_searchView"
                 android:background="@drawable/searchview_shape"
-                android:queryHint="Search"
+                android:queryHint="@string/message_search_title"
                 android:clickable="true"
                 android:layout_alignParentTop="true"/>
 
         <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/listSubject"
-                android:background="@color/gray"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/searchView"
-                android:footerDividersEnabled="false"/>
+            android:id="@+id/main_listSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/main_searchView"
+            android:background="@color/gray"
+            android:footerDividersEnabled="false" />
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/text_empty"
-                android:textSize="24dp"
-                android:text="暂无主题~"
-                android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"
-                android:layout_marginBottom="229dp"/>
+            android:id="@+id/main_text_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="229dp"
+            android:text="@string/noempty"
+            android:textSize="@dimen/sp_24" />
 
 
     </RelativeLayout>
