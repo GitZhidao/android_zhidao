@@ -14,7 +14,6 @@
         android:label="吱道"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--.ui.personcenter.Activity.WelcomeActivity-->
         <activity android:name=".ui.personcenter.Activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

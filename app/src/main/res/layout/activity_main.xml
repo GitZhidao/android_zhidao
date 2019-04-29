@@ -14,14 +14,14 @@
         <SearchView
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/dp_40"
-                android:id="@+id/main_searchView"
+                android:id="@id/main_searchView"
                 android:background="@drawable/searchview_shape"
                 android:queryHint="@string/message_search_title"
                 android:clickable="true"
                 android:layout_alignParentTop="true"/>
 
         <ListView
-            android:id="@+id/main_listSubject"
+            android:id="@id/main_listSubject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -31,7 +31,7 @@
             android:footerDividersEnabled="false" />
 
         <TextView
-            android:id="@+id/main_text_empty"
+            android:id="@id/main_text_empty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

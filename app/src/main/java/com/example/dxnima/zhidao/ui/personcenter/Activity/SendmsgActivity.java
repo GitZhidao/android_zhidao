@@ -37,7 +37,7 @@ public class SendmsgActivity extends BaseActivity implements IMsgView{
 
     @Override
     public void initViews() {
-        gltags=(TagFlowLayout) findViewById(R.id.gl_tags);
+        gltags=(TagFlowLayout) findViewById(R.id.addmsg_gl_tags);
         addTag();
     }
 

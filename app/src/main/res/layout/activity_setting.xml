@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout n1:background="@color/gray0"
+<android.support.constraint.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    n1:background="@color/gray0"
     n1:layout_width="fill_parent"
     n1:layout_height="fill_parent"
     xmlns:n1="http://schemas.android.com/apk/res/android"
@@ -24,26 +25,26 @@
         n2:layout_constraintTop_toBottomOf="@id/include">
 
         <ImageView
-            n1:id="@+id/civ_avatar"
+            n1:id="@id/setting_civ_avatar"
             n1:layout_width="@dimen/dp_40"
             n1:layout_height="@dimen/dp_40"
-            n1:src="@drawable/logo"  />
+            n1:src="@drawable/logo" />
 
         <TextView
-            n1:textSize="@dimen/sp_16"
-            n1:ellipsize="end"
-            n1:id="@+id/tv_nickname"
-            n1:paddingLeft="@dimen/dp_10"
+            n1:id="@id/setting_tv_nickname"
             n1:layout_width="wrap_content"
             n1:layout_height="wrap_content"
+            n1:ellipsize="end"
+            n1:paddingLeft="@dimen/dp_10"
+            n1:singleLine="true"
             n1:text="@string/app_name"
-            n1:singleLine="true" />
+            n1:textSize="@dimen/sp_16" />
     </LinearLayout>
 
     <TextView
         n1:textSize="@dimen/sp_14"
         n1:gravity="center"
-        n1:id="@+id/tv_sound"
+        n1:id="@id/setting_tv_sound"
         n1:background="@color/white"
         n1:padding="@dimen/dp_10"
         n1:layout_width="fill_parent"
@@ -53,31 +54,29 @@
         n3:layout_constraintTop_toBottomOf="@id/ll_info"
         xmlns:n3="http://schemas.android.com/apk/res-auto" />
 
-    <TextView
-        n1:textSize="@dimen/sp_14"
-        n1:gravity="center"
-        n1:id="@+id/tv_more_settings"
-        n1:background="@color/white"
-        n1:padding="@dimen/dp_10"
+    <TextView xmlns:n4="http://schemas.android.com/apk/res-auto"
+        n1:id="@id/setting_tv_more_settings"
         n1:layout_width="fill_parent"
         n1:layout_height="wrap_content"
         n1:layout_marginTop="@dimen/dp_1"
-        n1:text="@string/setting_more"
-        n4:layout_constraintTop_toBottomOf="@id/tv_sound"
-        xmlns:n4="http://schemas.android.com/apk/res-auto" />
-
-    <Button
-        n1:textSize="@dimen/sp_14"
+        n1:background="@color/white"
         n1:gravity="center"
-        n1:id="@+id/btn_logout"
-        n1:background="@drawable/shape_white_bg"
         n1:padding="@dimen/dp_10"
+        n1:text="@string/setting_more"
+        n1:textSize="@dimen/sp_14"
+        n4:layout_constraintTop_toBottomOf="@id/setting_tv_sound" />
+
+    <Button xmlns:n5="http://schemas.android.com/apk/res-auto"
+        n1:id="@id/setting_btn_logout"
         n1:layout_width="fill_parent"
         n1:layout_height="wrap_content"
         n1:layout_margin="@dimen/dp_15"
         n1:layout_marginBottom="@dimen/dp_20"
+        n1:background="@drawable/shape_white_bg"
+        n1:gravity="center"
+        n1:padding="@dimen/dp_10"
         n1:text="@string/setting_logout"
-        n5:layout_constraintBottom_toBottomOf="parent"
-        xmlns:n5="http://schemas.android.com/apk/res-auto" />
+        n1:textSize="@dimen/sp_14"
+        n5:layout_constraintBottom_toBottomOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

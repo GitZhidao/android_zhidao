@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/msgTitel"
+            android:id="@id/seemsg_msgTitel"
             android:layout_marginTop="49dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"/>
@@ -27,24 +27,24 @@
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:text="New Text"
-            android:id="@+id/msgText"
+            android:id="@id/seemsg_msgText"
             android:layout_marginTop="49dp"
-            android:layout_below="@id/msgTitel"
+            android:layout_below="@id/seemsg_msgTitel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
 
         <WebView
+            android:id="@id/seemsg_map"
             android:layout_width="300dp"
             android:layout_height="150dp"
-            android:id="@+id/map"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@id/msgText"/>
+            android:layout_below="@id/seemsg_msgText" />
 
     </RelativeLayout>
 </LinearLayout>

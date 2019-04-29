@@ -28,12 +28,12 @@
             n1:text="@string/send_message_Title" />
 
         <EditText
-            n1:textSize="@dimen/sp_14"
-            n1:textColor="@color/black0"
-            n1:id="@+id/et_title"
+            n1:id="@id/addmsg_et_title"
             n1:layout_width="fill_parent"
             n1:layout_height="wrap_content"
-            n1:maxLines="2" />
+            n1:maxLines="2"
+            n1:textColor="@color/black0"
+            n1:textSize="@dimen/sp_14" />
 
     </LinearLayout>
 
@@ -41,7 +41,7 @@
         n1:textSize="@dimen/sp_14"
         n1:textColor="@color/black0"
         n1:gravity="center|left|top"
-        n1:id="@+id/et_message"
+        n1:id="@id/addmsg_et_message"
         n1:background="@drawable/shape_white_stroke_bg"
         n1:padding="@dimen/dp_8"
         n1:layout_width="fill_parent"
@@ -62,7 +62,7 @@
         n1:layout_height="wrap_content"
         n1:layout_marginLeft="@dimen/dp_15"
         n1:layout_marginRight="@dimen/dp_15"
-        n3:layout_constraintTop_toBottomOf="@id/et_message"
+        n3:layout_constraintTop_toBottomOf="@id/addmsg_et_message"
         xmlns:n3="http://schemas.android.com/apk/res-auto">
 
         <TextView
@@ -72,12 +72,12 @@
             n1:text="@string/send_message_start_time" />
 
         <EditText
-            n1:textSize="@dimen/sp_14"
-            n1:id="@+id/et_start_time"
-            n1:paddingLeft="@dimen/dp_10"
-            n1:focusable="false"
+            n1:id="@id/addmsg_et_start_time"
             n1:layout_width="fill_parent"
-            n1:layout_height="wrap_content" />
+            n1:layout_height="wrap_content"
+            n1:focusable="false"
+            n1:paddingLeft="@dimen/dp_10"
+            n1:textSize="@dimen/sp_14" />
 
     </LinearLayout>
 
@@ -97,12 +97,12 @@
             n1:text="@string/send_message_end_time" />
 
         <EditText
-            n1:textSize="@dimen/sp_14"
-            n1:id="@+id/et_end_time"
-            n1:paddingLeft="@dimen/dp_10"
-            n1:focusable="false"
+            n1:id="@id/addmsg_et_end_time"
             n1:layout_width="fill_parent"
-            n1:layout_height="wrap_content" />
+            n1:layout_height="wrap_content"
+            n1:focusable="false"
+            n1:paddingLeft="@dimen/dp_10"
+            n1:textSize="@dimen/sp_14" />
 
     </LinearLayout>
 
@@ -128,20 +128,20 @@
                 n1:text="@string/send_message_tag" />
 
             <TextView
-                n1:textSize="@dimen/sp_14"
-                n1:id="@+id/tv_add_label"
+                n1:id="@id/addmsg_tv_add_label"
                 n1:layout_width="wrap_content"
                 n1:layout_height="wrap_content"
+                n1:layout_alignParentRight="true"
                 n1:text="@string/send_message_addtag"
-                n1:layout_alignParentRight="true" />
+                n1:textSize="@dimen/sp_14" />
 
         </RelativeLayout>
-        <com.zhy.view.flowlayout.TagFlowLayout
-            n1:id="@+id/gl_tags"
-            zhy:max_select="1"
+
+        <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+            n1:id="@id/addmsg_gl_tags"
             n1:layout_width="fill_parent"
             n1:layout_height="wrap_content"
-            xmlns:zhy="http://schemas.android.com/apk/res-auto"/>
+            zhy:max_select="1" />
 
     </LinearLayout>
 
@@ -188,10 +188,10 @@
         </RelativeLayout>
 
         <EditText
-            n1:textSize="@dimen/sp_14"
-            n1:id="@+id/et_position"
+            n1:id="@id/addmsg_et_position"
             n1:layout_width="fill_parent"
-            n1:layout_height="wrap_content" />
+            n1:layout_height="wrap_content"
+            n1:textSize="@dimen/sp_14" />
 
     </LinearLayout>
 
@@ -205,23 +205,23 @@
         xmlns:n7="http://schemas.android.com/apk/res-auto">
 
         <Button
-            n1:textSize="@dimen/sp_14"
-            n1:textColor="@color/white"
-            n1:id="@+id/btn_cancel"
-            n1:background="@drawable/btn_blue_shape"
+            n1:id="@id/addmsg_btn_cancel"
             n1:layout_width="@dimen/dp_120"
             n1:layout_height="@dimen/dp_40"
             n1:layout_marginRight="@dimen/dp_30"
-            n1:text="@string/cancel" />
+            n1:background="@drawable/btn_blue_shape"
+            n1:text="@string/cancel"
+            n1:textColor="@color/white"
+            n1:textSize="@dimen/sp_14" />
 
         <Button
-            n1:textSize="@dimen/sp_14"
-            n1:textColor="@color/white"
-            n1:id="@+id/btn_submit"
-            n1:background="@drawable/btn_blue_shape"
+            n1:id="@id/addmsg_btn_submit"
             n1:layout_width="@dimen/dp_120"
             n1:layout_height="@dimen/dp_40"
-            n1:text="@string/submit" />
+            n1:background="@drawable/btn_blue_shape"
+            n1:text="@string/submit"
+            n1:textColor="@color/white"
+            n1:textSize="@dimen/sp_14" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -38,9 +38,9 @@ public class SeemsgActivity extends BaseActivity implements IMsgView {
 
     @Override
     public void initViews() {
-        msgTitel = (TextView) findViewById(R.id.msgTitel);
-        msgText = (TextView) findViewById(R.id.msgText);
-        map = (WebView) findViewById(R.id.map);
+        msgTitel = (TextView) findViewById(R.id.seemsg_msgTitel);
+        msgText = (TextView) findViewById(R.id.seemsg_msgText);
+        map = (WebView) findViewById(R.id.seemsg_map);
         bundle=getIntent().getExtras();
         msgTitel.setText(bundle.getString("title"));
         msgText.setText(bundle.getString("content"));

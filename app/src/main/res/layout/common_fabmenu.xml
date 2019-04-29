@@ -6,7 +6,7 @@
                 android:orientation="vertical">
 
     <com.example.dxnima.zhidao.view.DragFloatButton.FloatingDraftButton
-            android:id="@+id/menu_FDB"
+            android:id="@id/menu_FDB"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             app:rippleColor="@color/app_primary"
@@ -20,7 +20,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@id/floatingActionButton_2"/>
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton_1"
+        android:id="@id/floatingActionButton_1"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:rippleColor="@color/app_primary"
@@ -35,7 +35,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="47dp"/>
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton_2"
+        android:id="@id/floatingActionButton_2"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:rippleColor="@color/app_primary"
@@ -51,7 +51,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/dp_47"/>
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton_3"
+        android:id="@id/floatingActionButton_3"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:rippleColor="@color/app_primary"
