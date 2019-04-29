@@ -1,4 +1,4 @@
-package com.example.dxnima.zhidao.view;
+package com.example.dxnima.zhidao.view.ListView;
 
 /**
  * Created by Jay on 2015/9/21 0021.

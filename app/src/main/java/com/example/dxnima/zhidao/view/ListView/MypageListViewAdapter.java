@@ -1,11 +1,10 @@
-package com.example.dxnima.zhidao.view;
+package com.example.dxnima.zhidao.view.ListView;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dxnima.zhidao.R;
@@ -13,15 +12,16 @@ import com.example.dxnima.zhidao.R;
 import java.util.LinkedList;
 
 /**
- *listView适配器
- * Created by Jay on 2015/9/21 0021.
+ * 关注的listview的适配器
+ * Created by DXnima on 2019/4/29.
  */
-public class MyListViewAdapter extends BaseAdapter {
+
+public class MypageListViewAdapter extends BaseAdapter {
 
     private Context mContext;
-    private LinkedList<MyListViewData> mData;
+    private LinkedList<MypageListViewData> mData;
 
-    public MyListViewAdapter(LinkedList<MyListViewData> mData, Context mContext) {
+    public MypageListViewAdapter(LinkedList<MypageListViewData> mData, Context mContext) {
         this.mData = mData;
         this.mContext = mContext;
     }
@@ -45,25 +45,23 @@ public class MyListViewAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.common_itemlist, parent, false);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.common_mypage_itemlist, parent, false);
             holder = new ViewHolder();
-            holder.list_msgimage = (ImageView) convertView.findViewById(R.id.list_msgimage);
-            holder.list_msgtitel = (TextView) convertView.findViewById(R.id.list_msgtitle);
-            holder.list_msgendtime=(TextView) convertView.findViewById(R.id.list_msgendtime);
-            holder.list_texttime=(TextView) convertView.findViewById(R.id.list_texttime);
+            holder.list_msgtitel = (TextView) convertView.findViewById(R.id.tv_theme_title);
+            holder.list_text=(TextView) convertView.findViewById(R.id.tv_theme_content);
+            holder.list_msgendtime=(TextView) convertView.findViewById(R.id.tv_dead_time);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.list_msgimage.setImageResource(mData.get(position).getImgId());
         holder.list_msgtitel.setText(mData.get(position).getTitle());
+        holder.list_text.setText(mData.get(position).getText());
         holder.list_msgendtime.setText(mData.get(position).getEndtime());
-        holder.list_texttime.setText(mData.get(position).getText());
         return convertView;
     }
 
     //添加一个元素
-    public void add(MyListViewData data) {
+    public void add(MypageListViewData data) {
         if (mData == null) {
             mData = new LinkedList<>();
         }
@@ -72,7 +70,7 @@ public class MyListViewAdapter extends BaseAdapter {
     }
 
     //往特定位置，添加一个元素
-    public void add(int position,MyListViewData data){
+    public void add(int position,MypageListViewData data){
         if (mData == null) {
             mData = new LinkedList<>();
         }
@@ -80,7 +78,7 @@ public class MyListViewAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public void remove(MyListViewData data) {
+    public void remove(MypageListViewData data) {
         if(mData != null) {
             mData.remove(data);
         }
@@ -101,9 +99,9 @@ public class MyListViewAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+
     private class ViewHolder {
-        ImageView list_msgimage;
-        TextView list_msgtitel,list_msgendtime,list_texttime;
+        TextView list_msgtitel,list_msgendtime,list_text;
     }
 
 }

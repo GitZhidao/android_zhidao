@@ -1,4 +1,4 @@
-package com.example.dxnima.zhidao.view;
+package com.example.dxnima.zhidao.view.ListView;
 
 import android.content.Context;
 import android.util.AttributeSet;
