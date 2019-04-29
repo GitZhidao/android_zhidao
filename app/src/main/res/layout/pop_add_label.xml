@@ -19,15 +19,15 @@
             n1:text="@string/pop_add_lable" />
 
         <EditText
-            n1:textSize="@dimen/sp_14"
-            n1:id="@+id/et_label"
-            n1:background="@drawable/shape_white_stroke_bg"
-            n1:paddingLeft="@dimen/dp_10"
+            n1:id="@id/addtag_et_label"
             n1:layout_width="fill_parent"
             n1:layout_height="@dimen/dp_35"
             n1:layout_marginLeft="@dimen/dp_30"
+            n1:layout_marginRight="@dimen/dp_30"
             n1:layout_marginTop="@dimen/dp_10"
-            n1:layout_marginRight="@dimen/dp_30" />
+            n1:background="@drawable/shape_white_stroke_bg"
+            n1:paddingLeft="@dimen/dp_10"
+            n1:textSize="@dimen/sp_14" />
 
         <LinearLayout
             n1:layout_width="wrap_content"
@@ -35,23 +35,23 @@
             n1:layout_marginTop="@dimen/dp_10">
 
             <Button
-                n1:textSize="@dimen/sp_14"
-                n1:textColor="@color/white"
-                n1:id="@+id/btn_cancel_pop"
-                n1:background="@drawable/btn_blue_shape"
+                n1:id="@id/addtag_btn_cancel_pop"
                 n1:layout_width="@dimen/dp_80"
                 n1:layout_height="@dimen/dp_40"
                 n1:layout_marginRight="@dimen/dp_20"
-                n1:text="@string/cancel" />
+                n1:background="@drawable/btn_blue_shape"
+                n1:text="@string/cancel"
+                n1:textColor="@color/white"
+                n1:textSize="@dimen/sp_14" />
 
             <Button
-                n1:textSize="@dimen/dp_14"
-                n1:textColor="@color/white"
-                n1:id="@+id/btn_submit_pop"
-                n1:background="@drawable/btn_blue_shape"
+                n1:id="@id/addtag_btn_submit_pop"
                 n1:layout_width="@dimen/dp_80"
                 n1:layout_height="@dimen/dp_40"
-                n1:text="@string/submit" />
+                n1:background="@drawable/btn_blue_shape"
+                n1:text="@string/submit"
+                n1:textColor="@color/white"
+                n1:textSize="@dimen/dp_14" />
 
         </LinearLayout>
     </LinearLayout>

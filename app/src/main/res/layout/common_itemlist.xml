@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/list_english"
-            android:id="@+id/list_msgtitle"
+            android:id="@id/list_msgtitle"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -31,7 +31,7 @@
         <ImageView
             android:layout_width="@dimen/dp_60"
             android:layout_height="@dimen/dp_20"
-            android:id="@+id/list_msgimage"
+            android:id="@id/list_msgimage"
             android:layout_marginLeft="@dimen/dp_20"
             android:layout_marginStart="@dimen/dp_20"
             android:layout_alignParentTop="true"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/list_time"
-            android:id="@+id/list_msgendtime"
+            android:id="@id/list_msgendtime"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@id/imageView4"
             android:layout_toStartOf="@id/imageView4"/>

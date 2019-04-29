@@ -22,7 +22,7 @@
         <TextView
             n1:textSize="@dimen/sp_16"
             n1:gravity="center"
-            n1:id="@+id/tv_capture"
+            n1:id="@id/popmine_tv_capture"
             n1:padding="@dimen/dp_10"
             n1:layout_width="fill_parent"
             n1:layout_height="wrap_content"
@@ -33,13 +33,13 @@
             n1:background="@color/gray0"
             n1:layout_width="fill_parent"
             n1:layout_height="@dimen/dp_1"
-            n2:layout_constraintTop_toBottomOf="@id/tv_capture"
+            n2:layout_constraintTop_toBottomOf="@id/popmine_tv_capture"
             xmlns:n2="http://schemas.android.com/apk/res-auto" />
 
         <TextView
             n1:textSize="@dimen/sp_16"
             n1:gravity="center"
-            n1:id="@+id/tv_alarm"
+            n1:id="@id/popmine_tv_alarm"
             n1:padding="@dimen/dp_10"
             n1:layout_width="fill_parent"
             n1:layout_height="wrap_content"
@@ -52,20 +52,19 @@
             n1:background="@color/gray1"
             n1:layout_width="fill_parent"
             n1:layout_height="@dimen/dp_10"
-            n4:layout_constraintTop_toBottomOf="@id/tv_alarm"
+            n4:layout_constraintTop_toBottomOf="@id/popmine_tv_alarm"
             xmlns:n4="http://schemas.android.com/apk/res-auto" />
 
-        <TextView
-            n1:textSize="@dimen/sp_16"
-            n1:gravity="center"
-            n1:id="@+id/tv_cancel"
-            n1:paddingTop="@dimen/dp_15"
-            n1:paddingBottom="@dimen/dp_15"
+        <TextView xmlns:n5="http://schemas.android.com/apk/res-auto"
+            n1:id="@id/popmine_tv_cancel"
             n1:layout_width="fill_parent"
             n1:layout_height="wrap_content"
+            n1:gravity="center"
+            n1:paddingBottom="@dimen/dp_15"
+            n1:paddingTop="@dimen/dp_15"
             n1:text="@string/cancel"
-            n5:layout_constraintTop_toBottomOf="@id/view_gray"
-            xmlns:n5="http://schemas.android.com/apk/res-auto" />
+            n1:textSize="@dimen/sp_16"
+            n5:layout_constraintTop_toBottomOf="@id/view_gray" />
 
     </LinearLayout>
 </LinearLayout>

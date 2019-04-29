@@ -7,7 +7,7 @@
         n1:layout_height="@dimen/dp_200">
 
         <TextView
-            n1:id="@+id/mypage_setting"
+            n1:id="@id/mypage_setting"
             n1:layout_width="wrap_content"
             n1:layout_height="wrap_content"
             n1:layout_alignParentRight="true"
@@ -18,13 +18,13 @@
         <LinearLayout n1:gravity="center" n1:orientation="vertical" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_centerInParent="true">
 
             <ImageView
-                n1:id="@+id/mypage_image"
+                n1:id="@id/mypage_image"
                 n1:layout_width="@dimen/dp_70"
                 n1:layout_height="@dimen/dp_70"
                 n1:src="@drawable/logo" />
 
             <TextView
-                n1:id="@+id/mypage_user"
+                n1:id="@id/mypage_user"
                 n1:layout_width="wrap_content"
                 n1:layout_height="wrap_content"
                 n1:ellipsize="end"

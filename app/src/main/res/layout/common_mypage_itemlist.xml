@@ -28,7 +28,7 @@
 
             <TextView
                 n1:textSize="@dimen/sp_16"
-                n1:id="@+id/tv_theme_title"
+                n1:id="@id/tv_theme_title"
                 n1:layout_width="fill_parent"
                 n1:layout_height="wrap_content"
                 n1:text="@string/list_english" />
@@ -36,7 +36,7 @@
             <TextView
                 n1:textSize="@dimen/sp_14"
                 n1:ellipsize="end"
-                n1:id="@+id/tv_theme_content"
+                n1:id="@id/tv_theme_content"
                 n1:paddingTop="@dimen/dp_10"
                 n1:layout_width="fill_parent"
                 n1:layout_height="wrap_content"
@@ -46,7 +46,7 @@
 
             <TextView
                 n1:textSize="@dimen/sp_14"
-                n1:id="@+id/tv_dead_time"
+                n1:id="@id/tv_dead_time"
                 n1:layout_width="wrap_content"
                 n1:layout_height="wrap_content"
                 n1:text="结束时间:2019-04-15 10:00"

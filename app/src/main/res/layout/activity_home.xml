@@ -20,7 +20,7 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/home_msg"
+            android:id="@id/home_msg"
             style="@style/Custom.TabRadioButton"
             android:drawableTop="@drawable/tab_record_selector"
             android:text="@string/home_msg" />
@@ -28,7 +28,7 @@
         <View style="@style/Custom.TabRadioButton" />
 
         <RadioButton
-            android:id="@+id/home_my"
+            android:id="@id/home_my"
             style="@style/Custom.TabRadioButton"
             android:drawableTop="@drawable/tab_contact_selector"
             android:text="@string/home_my" />
@@ -36,7 +36,7 @@
     </RadioGroup>
 
     <ImageView
-            android:id="@+id/home_sendmsg"
+            android:id="@id/home_sendmsg"
             android:layout_width="@dimen/dp_80"
             android:layout_height="@dimen/dp_80"
             android:layout_alignParentBottom="true"

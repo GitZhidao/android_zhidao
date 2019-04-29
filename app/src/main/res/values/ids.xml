@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--界面各个要用的控件的id全放这里-->
+
+    <!--activity_addmsg-->
+    <item type="id" name="addmsg_et_title" />
+    <item type="id" name="addmsg_et_message" />
+    <item type="id" name="addmsg_et_start_time" />
+    <item type="id" name="addmsg_et_end_time" />
+    <item type="id" name="addmsg_tv_add_label" />
+    <item type="id" name="addmsg_gl_tags" />
+    <item type="id" name="addmsg_et_position" />
+    <item type="id" name="addmsg_btn_cancel" />
+    <item type="id" name="addmsg_btn_submit" />
+
+    <!--activity_allmsg-->
+    <item type="id" name="allmsg_searchMsg" />
+    <item type="id" name="allmsg_listMsg" />
+    <item type="id" name="allmsg_text" />
+
+    <!--activity_home-->
+    <item type="id" name="home_msg" />
+    <item type="id" name="home_my" />
+    <item type="id" name="home_sendmsg" />
+
+    <!--activity_login-->
+    <item type="id" name="login_pictureUser" />
+    <item type="id" name="login_username" />
+    <item type="id" name="login_password" />
+    <item type="id" name="login_login" />
+    <item type="id" name="login_go_updatepassword" />
+    <item type="id" name="login_go_register" />
+    <item type="id" name="login_qq_login" />
+    <item type="id" name="login_wecat_login" />
+    <item type="id" name="login_webo_login" />
+    <item type="id" name="login_other_login" />
+
+    <!--activity_main-->
+    <item type="id" name="main_searchView" />
+    <item type="id" name="main_listSubject" />
+    <item type="id" name="main_text_empty" />
+
+    <!--activity_my-->
+    <item type="id" name="mypage_setting" />
+    <item type="id" name="mypage_image" />
+    <item type="id" name="mypage_user" />
+
+    <!--activity_register-->
+    <item type="id" name="register_avatar" />
+    <item type="id" name="register_username" />
+    <item type="id" name="register_password" />
+    <item type="id" name="register_email" />
+    <item type="id" name="register_getCode" />
+    <item type="id" name="register_setcode" />
+    <item type="id" name="register_btn" />
+    <item type="id" name="register_login" />
+
+    <!--activity_seemag-->
+    <item type="id" name="seemsg_msgTitel" />
+    <item type="id" name="seemsg_msgText" />
+    <item type="id" name="seemsg_map" />
+
+    <!--activity_setting-->
+    <item type="id" name="setting_civ_avatar" />
+    <item type="id" name="setting_tv_nickname" />
+    <item type="id" name="setting_tv_sound" />
+    <item type="id" name="setting_tv_more_settings" />
+    <item type="id" name="setting_btn_logout" />
+
+    <!--activity_updatepsd-->
+    <item type="id" name="updatepsd_email" />
+    <item type="id" name="updatepsd_getCode" />
+    <item type="id" name="updatepsd_pictureUser" />
+
+    <!--common_fabmenu-->
+    <item type="id" name="menu_FDB" />
+    <item type="id" name="floatingActionButton_1" />
+    <item type="id" name="floatingActionButton_2" />
+    <item type="id" name="floatingActionButton_3" />
+
+    <!--common_itemlist-->
+    <item type="id" name="list_msgtitle" />
+    <item type="id" name="list_msgimage" />
+    <item type="id" name="list_msgendtime" />
+
+    <!--common_mypage_itemlist-->
+    <item type="id" name="tv_theme_title" />
+    <item type="id" name="tv_theme_content" />
+    <item type="id" name="tv_dead_time" />
+
+    <!--fragment_mypage_subject-->
+    <item type="id" name="mypage_suject_listView" />
+
+    <!--pop_add_label-->
+    <item type="id" name="addtag_et_label" />
+    <item type="id" name="addtag_btn_cancel_pop" />
+    <item type="id" name="addtag_btn_submit_pop" />
+
+    <!--pop_main_avatar_sheet-->
+    <item type="id" name="popmine_tv_capture" />
+    <item type="id" name="popmine_tv_alarm" />
+    <item type="id" name="popmine_tv_cancel" />
+
+</resources>
