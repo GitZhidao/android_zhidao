@@ -1,9 +1,9 @@
 package com.example.dxnima.zhidao.ui.base;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,7 +29,7 @@ import de.greenrobot.event.EventBus;
  *  activity生命周期
  * Created by DXnima on 2019/4/1.
  */
-public abstract class BaseActivity extends Activity implements CreateInit, PublishActivityCallBack, PresentationLayerFunc, IMvpView, View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity implements CreateInit, PublishActivityCallBack, PresentationLayerFunc, IMvpView, View.OnClickListener {
 
     private PresentationLayerFuncHelper presentationLayerFuncHelper;
 

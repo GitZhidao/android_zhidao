@@ -13,8 +13,8 @@ import com.example.dxnima.zhidao.bean.table.Msg;
 import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IMsgView;
 import com.example.dxnima.zhidao.biz.personcenter.MsgPresenter;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
-import com.example.dxnima.zhidao.view.MyListViewAdapter;
-import com.example.dxnima.zhidao.view.MyListViewData;
+import com.example.dxnima.zhidao.view.ListView.MyListViewAdapter;
+import com.example.dxnima.zhidao.view.ListView.MyListViewData;
 
 import java.util.LinkedList;
 import java.util.List;

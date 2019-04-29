@@ -1,7 +1,7 @@
 package com.example.dxnima.zhidao.ui.personcenter.Activity;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -55,7 +55,7 @@ public class HomeActivity extends BaseActivity implements IGetSubjectView{
         super.onCreate(savedInstanceState);
         presenter = getSubjectPresenter = new GetSubjectPresenter();
         getSubjectPresenter.attachView(this);
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         setChioceItem(0); // 初始化页面加载时显示第一个选项卡
     }
 

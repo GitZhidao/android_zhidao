@@ -136,13 +136,12 @@
                 n1:layout_alignParentRight="true" />
 
         </RelativeLayout>
-
-        <com.zhy.view.flowlayout.FlowLayout
+        <com.zhy.view.flowlayout.TagFlowLayout
             n1:id="@+id/gl_tags"
             zhy:max_select="1"
             n1:layout_width="fill_parent"
             n1:layout_height="wrap_content"
-            xmlns:zhy="http://schemas.android.com/tools"/>
+            xmlns:zhy="http://schemas.android.com/apk/res-auto"/>
 
     </LinearLayout>
 

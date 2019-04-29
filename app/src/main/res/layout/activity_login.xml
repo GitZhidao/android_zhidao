@@ -7,17 +7,18 @@
     <include layout="@layout/common_title"
         n1:layout_alignParentTop="true"
         n1:layout_width="match_parent"
-        n1:layout_height="wrap_content" />
+        n1:layout_height="wrap_content"
+        n1:id="@+id/include"/>
 
     <ImageView
         n1:id="@+id/updatepsd_pictureUser"
         n1:layout_width="@dimen/dp_80"
         n1:layout_height="@dimen/dp_80"
-        n1:layout_marginTop="@dimen/dp_60"
+        n1:layout_marginTop="@dimen/dp_20"
         n1:src="@drawable/logo"
         n2:layout_constraintLeft_toLeftOf="parent"
         n2:layout_constraintRight_toRightOf="parent"
-        n2:layout_constraintTop_toTopOf="parent"
+        n2:layout_constraintTop_toBottomOf="@id/include"
         xmlns:n2="http://schemas.android.com/apk/res-auto" />
 
     <EditText n1:textSize="@dimen/sp_14"

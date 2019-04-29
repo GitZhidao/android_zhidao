@@ -1,6 +1,6 @@
 package com.example.dxnima.zhidao.ui.personcenter.Fragment;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,8 +18,8 @@ import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
 import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.ISubjectView;
 import com.example.dxnima.zhidao.biz.personcenter.SubjectPresenter;
 import com.example.dxnima.zhidao.ui.personcenter.Activity.AllmsgActivity;
-import com.example.dxnima.zhidao.view.MyListViewAdapter;
-import com.example.dxnima.zhidao.view.MyListViewData;
+import com.example.dxnima.zhidao.view.ListView.MyListViewAdapter;
+import com.example.dxnima.zhidao.view.ListView.MyListViewData;
 
 import java.util.LinkedList;
 import java.util.List;
