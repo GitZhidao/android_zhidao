@@ -6,6 +6,7 @@ package com.example.dxnima.zhidao.capabilities.http;
  * Created by DXnima on 2019/4/1.
  */
 public class Param {
+
     public Param() {
     }
 
@@ -19,7 +20,7 @@ public class Param {
         this.value = value + "";
     }
 
-    String key;
+    public String key;
 
-    String value;
+    public String value;
 }

@@ -17,11 +17,11 @@
             n1:textSize="@dimen/sp_16" />
         <LinearLayout n1:gravity="center" n1:orientation="vertical" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_centerInParent="true">
 
-            <ImageView
+            <com.example.dxnima.zhidao.view.MyCircleImageView
                 n1:id="@id/mypage_image"
                 n1:layout_width="@dimen/dp_70"
                 n1:layout_height="@dimen/dp_70"
-                n1:src="@drawable/logo" />
+                n1:src="@drawable/abc123456" />
 
             <TextView
                 n1:id="@id/mypage_user"

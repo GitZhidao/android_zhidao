@@ -6,6 +6,7 @@ import com.example.dxnima.zhidao.bean.BaseResp;
 import com.example.dxnima.zhidao.bean.ListBaseResp;
 import com.example.dxnima.zhidao.capabilities.json.GsonHelper;
 import com.example.dxnima.zhidao.capabilities.log.EBLog;
+import com.example.dxnima.zhidao.constant.Constants;
 import com.example.dxnima.zhidao.util.GeneralUtils;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
@@ -51,7 +52,7 @@ public class OkHttpUtil {
 
     public final int READ_TIMEOUT = 20;
 
-    public static final MediaType JSON=MediaType.parse("application/json; charset=utf-8");
+    public static final MediaType JSON= Constants.JSON;
 
     public static String sessionid="";//保存session
     /**
@@ -488,8 +489,10 @@ public class OkHttpUtil {
                     if (sessionid == "") {
                         Headers headers = response.headers();//获取响应头
                         List cookies = headers.values("Set-Cookie");
-                        String session = (String) cookies.get(0);
-                        sessionid = session.substring(0, session.indexOf(";"));
+                        if (cookies.size()>0) {
+                            String session = (String) cookies.get(0);
+                            sessionid = session.substring(0, session.indexOf(";"));
+                        }
                     }
                     final T res = GsonHelper.toType(result, clazz);//json数据转类对象
                     final List<T> resData;

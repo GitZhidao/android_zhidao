@@ -11,6 +11,7 @@ import com.example.dxnima.zhidao.bridge.Bridges;
 import com.example.dxnima.zhidao.bridge.cache.sharePref.EBSharedPrefManager;
 import com.example.dxnima.zhidao.bridge.cache.sharePref.EBSharedPrefUser;
 import com.example.dxnima.zhidao.bridge.http.OkHttpManager;
+import com.example.dxnima.zhidao.capabilities.cache.BaseSharedPreference;
 import com.example.dxnima.zhidao.capabilities.http.ITRequestResult;
 import com.example.dxnima.zhidao.constant.URLUtil;
 import com.example.dxnima.zhidao.dao.DaoSession;
@@ -97,8 +98,6 @@ public class UserPresenter extends BasePresenter<IUserLoginView> {
             @Override
             public void onSuccessful(List<User> entity) {
                 mvpView.onSuccess();
-                EBSharedPrefManager manager = BridgeFactory.getBridge(Bridges.SHARED_PREFERENCE);
-                manager.getKDPreferenceUserInfo().saveString(EBSharedPrefUser.USER_NAME, entity.get(0).getUsername());
             }
 
             @Override

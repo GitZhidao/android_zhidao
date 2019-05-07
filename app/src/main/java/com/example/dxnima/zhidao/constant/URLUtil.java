@@ -11,8 +11,8 @@ public class URLUtil {
      * 服务器地址
      * http://i24388o999.qicp.vip:18855   8080
      */
-    //public static final String SERVER = "http://i24388o999.qicp.vip:36195/";//8888
-    public static final String SERVER = "http://i24388o999.qicp.vip:36195/";//8080
+    //public static final String SERVER = "http://i24388o999.qicp.vip:36195/";//8088
+    public static final String SERVER = "http://i24388o999.qicp.vip:10460/";
     /**
      * 用户登陆
      */

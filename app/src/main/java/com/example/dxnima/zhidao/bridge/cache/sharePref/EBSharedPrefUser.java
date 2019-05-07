@@ -15,6 +15,11 @@ public class EBSharedPrefUser extends BaseSharedPreference {
      */
     public static final String USER_NAME = "user_name";
 
+    /**
+     * 编号查询得到的所有msg
+     * */
+    public static final String ALLMSG_BYCODE="allMsg_byCode";
+
     public EBSharedPrefUser(Context context, String fileName) {
         super(context,fileName);
     }

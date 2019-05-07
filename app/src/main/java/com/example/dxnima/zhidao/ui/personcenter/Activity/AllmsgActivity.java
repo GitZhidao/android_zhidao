@@ -121,12 +121,13 @@ public class AllmsgActivity extends BaseActivity implements IMsgView{
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     MyListViewData data=mData.get(position);
-                    Intent intent = new Intent(AllmsgActivity.this,SeemsgActivity.class);//跳转到看消息界面
+                    //Intent intent = new Intent(AllmsgActivity.this,SeemsgActivity.class);
+                    //跳转到看消息界面
                     bundle.putString("title", data.getTitle());//bundle传值，SeemsgActivity中使用
                     bundle.putString("endtime", data.getEndtime());
                     bundle.putString("content",msgList.get(position).getContent());
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    //intent.putExtras(bundle);
+                    startActivity(SeemsgActivity.class,bundle);
                 }
             });
         }

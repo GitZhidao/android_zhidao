@@ -3,6 +3,13 @@ package com.example.dxnima.zhidao.capabilities.cache;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.dxnima.zhidao.capabilities.json.GsonHelper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <sharepref基础存储功能模块>
  *
@@ -17,6 +24,7 @@ public class BaseSharedPreference {
     private String fileName;
 
     private Context context;
+
 
     public BaseSharedPreference(Context context, String fileName) {
         this.fileName = fileName;
@@ -100,4 +108,5 @@ public class BaseSharedPreference {
     public long getLong(String key, long def) {
         return getSharedPreferences().getLong(key, def);
     }
+
 }

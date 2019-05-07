@@ -20,16 +20,12 @@ import com.example.dxnima.zhidao.ui.base.BaseActivity;
 public class RegisterActivity extends BaseActivity implements IUserLoginView{
 
     private EditText username;//用户名
-
     private EditText password;//密码
-
     private EditText email;//邮箱
-
     private EditText getCode;//验证码
-
     private Button register;//注册
-
     private TextView textView;//获取验证码
+    private TextView login;//已有账号去登陆
 
     private UserPresenter mUserPresenter;
 
@@ -51,6 +47,7 @@ public class RegisterActivity extends BaseActivity implements IUserLoginView{
         getCode=(EditText) findViewById(R.id.register_getCode);
         register=(Button) findViewById(R.id.register_btn);
         textView=(TextView) findViewById(R.id.register_setcode);
+        login=(TextView) findViewById(R.id.register_login);
     }
 
     // 初始化公共头部
@@ -64,6 +61,7 @@ public class RegisterActivity extends BaseActivity implements IUserLoginView{
     public void initListeners() {
         register.setOnClickListener(this);
         textView.setOnClickListener(this);
+        login.setOnClickListener(this);
     }
 
     @Override
@@ -79,15 +77,6 @@ public class RegisterActivity extends BaseActivity implements IUserLoginView{
         getCode.setText("");
     }
 
-    @Override
-    public void onEventMainThread(Event event) {
-        super.onEventMainThread(event);
-        switch (event){
-            case IMAGE_LOADER_SUCCESS:
-                clearEditContent();
-                break;
-        }
-    }
 
     @Override
     public void onClick(View v) {
@@ -96,7 +85,10 @@ public class RegisterActivity extends BaseActivity implements IUserLoginView{
                 mUserPresenter.registerInternet(username.getText().toString(), password.getText().toString(),email.getText().toString());
                 break;
             case R.id.register_setcode:
-                //获取验证码
+                //TODO 获取验证码
+                break;
+            case R.id.register_login:
+                startActivity(LoginActivity.class,null);
                 break;
         }
         super.onClick(v);

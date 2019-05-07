@@ -10,7 +10,8 @@
         n1:layout_height="wrap_content"
         n1:id="@+id/include"/>
 
-    <ImageView xmlns:n2="http://schemas.android.com/apk/res-auto"
+    <com.example.dxnima.zhidao.view.MyCircleImageView
+        xmlns:n2="http://schemas.android.com/apk/res-auto"
         n1:id="@id/register_avatar"
         n1:layout_width="@dimen/dp_60"
         n1:layout_height="@dimen/dp_60"

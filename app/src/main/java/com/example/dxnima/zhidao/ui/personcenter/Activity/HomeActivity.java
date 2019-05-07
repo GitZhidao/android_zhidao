@@ -3,10 +3,12 @@ package com.example.dxnima.zhidao.ui.personcenter.Activity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.example.dxnima.zhidao.R;
 import com.example.dxnima.zhidao.biz.personcenter.GetSubjectPresenter;
@@ -14,6 +16,7 @@ import com.example.dxnima.zhidao.biz.personcenter.InterfaceView.IGetSubjectView;
 import com.example.dxnima.zhidao.ui.base.BaseActivity;
 import com.example.dxnima.zhidao.ui.personcenter.Fragment.MainFragment;
 import com.example.dxnima.zhidao.ui.personcenter.Fragment.MypageFragment;
+import com.example.dxnima.zhidao.util.ToastUtil;
 
 /**
  * 主页面
@@ -28,6 +31,8 @@ public class HomeActivity extends BaseActivity implements IGetSubjectView{
     // 定义FragmentManager对象管理器
     private FragmentManager fragmentManager;
 
+    //定义一个变量，来标识是否退出
+    private static boolean isExit=false;
     /**
      *
      * 底部栏控件
@@ -104,6 +109,25 @@ public class HomeActivity extends BaseActivity implements IGetSubjectView{
      */
     @Override
     public void initData(){
+    }
+
+    /**
+     * 按两次返回键退出
+     * */
+    @Override
+    public boolean onKeyDown(int keyCode,KeyEvent event){
+        if(keyCode==KeyEvent.KEYCODE_BACK){
+            if(!isExit) {
+                isExit = true;
+                ToastUtil.makeText(this,"再按一次退出");
+            }
+            else{
+                finish();
+                System.exit(0);
+            }
+            return false;
+        }
+        return super.onKeyDown(keyCode,event);
     }
 
     @Override

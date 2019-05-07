@@ -10,7 +10,7 @@
         n1:layout_height="wrap_content"
         n1:id="@+id/include"/>
 
-    <ImageView
+    <com.example.dxnima.zhidao.view.MyCircleImageView
         n1:id="@id/login_pictureUser"
         n1:layout_width="@dimen/dp_80"
         n1:layout_height="@dimen/dp_80"

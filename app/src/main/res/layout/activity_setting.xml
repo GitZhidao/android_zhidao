@@ -24,11 +24,11 @@
         n1:layout_height="wrap_content"
         n2:layout_constraintTop_toBottomOf="@id/include">
 
-        <ImageView
+        <com.example.dxnima.zhidao.view.MyCircleImageView
             n1:id="@id/setting_civ_avatar"
             n1:layout_width="@dimen/dp_40"
             n1:layout_height="@dimen/dp_40"
-            n1:src="@drawable/logo" />
+            n1:src="@drawable/abc123456" />
 
         <TextView
             n1:id="@id/setting_tv_nickname"
